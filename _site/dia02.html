@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Dia-02</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Introdução à Análise de Dados Funcionais</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dia01.html">
+ <span class="menu-text">Dia-01</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./dia02.html" aria-current="page">
+ <span class="menu-text">Dia-02</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dia03.html">
+ <span class="menu-text">Dia-03</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dia04.html">
+ <span class="menu-text">Dia-04</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dia05.html">
+ <span class="menu-text">Dia-05</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#secao-2" id="toc-secao-2" class="nav-link active" data-scroll-target="#secao-2">Modelagem de dados funcionais com expansões de base predefinida</a>
+  <ul class="collapse">
+  <li><a href="#tópicos-dia-2" id="toc-tópicos-dia-2" class="nav-link" data-scroll-target="#tópicos-dia-2">Tópicos dia 2:</a></li>
+  <li><a href="#várias-funções-base" id="toc-várias-funções-base" class="nav-link" data-scroll-target="#várias-funções-base">1 Várias funções base:</a>
+  <ul class="collapse">
+  <li><a href="#biblioteca-fda" id="toc-biblioteca-fda" class="nav-link" data-scroll-target="#biblioteca-fda">1.1 Biblioteca fda</a></li>
+  <li><a href="#bases-monomiais" id="toc-bases-monomiais" class="nav-link" data-scroll-target="#bases-monomiais">1.2 Bases Monomiais</a></li>
+  <li><a href="#bases-de-fourier" id="toc-bases-de-fourier" class="nav-link" data-scroll-target="#bases-de-fourier">1.3 Bases de Fourier</a></li>
+  <li><a href="#bases-b-spline" id="toc-bases-b-spline" class="nav-link" data-scroll-target="#bases-b-spline">1.4 Bases B-Spline</a></li>
+  <li><a href="#outras-bases" id="toc-outras-bases" class="nav-link" data-scroll-target="#outras-bases">1.5 Outras bases</a></li>
+  </ul></li>
+  <li><a href="#o-objeto-dados-funcionais-fd-do-pacote-fda" id="toc-o-objeto-dados-funcionais-fd-do-pacote-fda" class="nav-link" data-scroll-target="#o-objeto-dados-funcionais-fd-do-pacote-fda">2 O objeto dados funcionais (FD) do pacote fda</a></li>
+  <li><a href="#regressão-linear-em-funções-de-base-ols" id="toc-regressão-linear-em-funções-de-base-ols" class="nav-link" data-scroll-target="#regressão-linear-em-funções-de-base-ols">3 Regressão linear em funções de base (OLS)</a></li>
+  <li><a href="#como-determinar-o-número-de-funções-de-base" id="toc-como-determinar-o-número-de-funções-de-base" class="nav-link" data-scroll-target="#como-determinar-o-número-de-funções-de-base">4 Como determinar o número de funções de base?</a></li>
+  <li><a href="#como-levar-em-consideração-a-suavidade-na-curva-subjacente" id="toc-como-levar-em-consideração-a-suavidade-na-curva-subjacente" class="nav-link" data-scroll-target="#como-levar-em-consideração-a-suavidade-na-curva-subjacente">5 Como levar em consideração a suavidade na curva subjacente?</a></li>
+  </ul></li>
+  <li><a href="#resumo" id="toc-resumo" class="nav-link" data-scroll-target="#resumo">5 Resumo</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Dia-02</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+
+</div>
+<section id="secao-2" class="level1">
+<h1>Modelagem de dados funcionais com expansões de base predefinida</h1>
+<section id="tópicos-dia-2" class="level2">
+<h2 class="anchored" data-anchor-id="tópicos-dia-2">Tópicos dia 2:</h2>
+<ul>
+<li><p>Construir diferentes funções de base em R</p></li>
+<li><p>Criar dados funcionais</p></li>
+<li><p>Regressão linear em funções de base (OLS)</p></li>
+<li><p>Como escolher o número de funções de base?</p></li>
+<li><p>Como explicar a suavidade na curva subjacente?</p>
+<ul>
+<li>métodos do kernel</li>
+<li>Suavização penalizada e seleção do parâmetro de suavização</li>
+</ul></li>
+</ul>
+<p>[Os Código são cortesia de Giles Hooker]</p>
+</section>
+<section id="várias-funções-base" class="level2">
+<h2 class="anchored" data-anchor-id="várias-funções-base">1 Várias funções base:</h2>
+<p>As funções base, também conhecidas como funções de base, são utilizadas em análise estatística e modelagem para descrever ou aproximar relações complexas entre variáveis. Elas são usadas como componentes de modelos estatísticos e permitem representar de forma flexível e adequada diferentes padrões de dados.</p>
+<p>As funções base são frequentemente aplicadas em análise de regressão, onde o objetivo é encontrar uma função que relacione uma variável dependente a uma ou mais variáveis independentes. Elas formam uma base para representar o comportamento geral dos dados e permitem expressar as relações entre as variáveis de forma mais simples e interpretável.</p>
+<p>Existem diferentes tipos de funções base, sendo as mais comuns:</p>
+<ul>
+<li><p>Funções polinomiais: São funções base construídas a partir de polinômios. Geralmente são utilizadas funções polinomiais de grau baixo, como polinômios de primeira e segunda ordem, para ajustar curvas lineares e quadráticas, respectivamente.</p></li>
+<li><p>Funções splines: As funções splines dividem o domínio de interesse em segmentos menores e utilizam polinômios de grau baixo em cada segmento para modelar os dados. Isso permite uma flexibilidade maior na representação de padrões complexos e não lineares.</p></li>
+<li><p>Funções de onda: São funções que se repetem ao longo de um domínio e podem ser usadas para modelar fenômenos periódicos. Exemplos comuns são as funções seno e cosseno.</p></li>
+<li><p>Funções de base radial: São funções que dependem da distância entre pontos de dados e um centro definido. Essas funções são frequentemente utilizadas em problemas de interpolação ou para modelar dados com padrões radiais.</p></li>
+</ul>
+<p>Ao escolher as funções base adequadas, é possível capturar diferentes características dos dados e ajustar modelos que se ajustem melhor aos padrões observados. A seleção correta das funções base é um aspecto importante na modelagem estatística, e depende do conhecimento do pesquisador sobre o problema em questão, bem como das características dos dados disponíveis.</p>
+<section id="biblioteca-fda" class="level3">
+<h3 class="anchored" data-anchor-id="biblioteca-fda">1.1 Biblioteca fda</h3>
+<p>A biblioteca fda (Functional Data Analysis) é um pacote em R que fornece funcionalidades para análise de dados funcionais. A análise de dados funcionais é uma área da estatística que lida com dados observados como funções contínuas ao longo de uma dimensão, como séries temporais, curvas suaves ou imagens médicas.</p>
+<p>O fda permite a manipulação, visualização, modelagem e análise de dados funcionais de maneira eficiente. Alguns recursos e funcionalidades principais do fda incluem:</p>
+<ul>
+<li><p>Representação de dados funcionais: O pacote oferece estruturas de dados adequadas para representar e armazenar dados funcionais, como objetos fd (functional data) e fdata (functional data array).</p></li>
+<li><p>Visualização de dados funcionais: O fda inclui funções para plotagem e visualização de dados funcionais, permitindo a criação de gráficos de séries temporais, curvas suaves e outras representações visuais adequadas para dados funcionais.</p></li>
+<li><p>Análise exploratória: O pacote fornece métodos estatísticos para análise exploratória de dados funcionais, incluindo medidas descritivas, como média, mediana e desvio padrão funcional, além de ferramentas para análise de variabilidade e análise de componentes principais funcionais.</p></li>
+<li><p>Modelagem e ajuste de dados funcionais: O fda oferece métodos para modelar dados funcionais, incluindo regressão funcional, análise de covariância funcional e análise de séries temporais funcionais. Isso permite ajustar modelos estatísticos apropriados aos dados funcionais.</p></li>
+<li><p>Alinhamento e registro de dados funcionais: O pacote inclui funções para alinhar e registrar dados funcionais, que são úteis quando se deseja comparar ou combinar diferentes curvas ou séries temporais funcionais.</p></li>
+</ul>
+<p>A biblioteca fda é uma ferramenta poderosa para análise de dados funcionais e pode ser usada em uma variedade de aplicações, como medicina, economia, engenharia e muitas outras áreas em que os dados são naturalmente representados como funções contínuas.</p>
+</section>
+<section id="bases-monomiais" class="level3">
+<h3 class="anchored" data-anchor-id="bases-monomiais">1.2 Bases Monomiais</h3>
+<p>A função base monomial, do pacote fda, requer o domínio e o número da base. Por exemplo, a base monomial com K=6 funções de base definidas no intervalo [0,1] pode ser construída da seguinte forma.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bbasis_obj <span class="ot">=</span> <span class="fu">create.monomial.basis</span>(<span class="at">rangeval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">nbasis =</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Isso retornará uma saída como “funções”. Para avaliar as bases criadas, em uma grade de s pontos, podemos:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">length.out=</span><span class="dv">100</span>) <span class="co"># grade de pontos</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>bbasisevals <span class="ot">&lt;-</span> <span class="fu">eval.basis</span>(x, bbasis_obj) <span class="co"># avaliando as bases na grade de pontos</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para visualizar as bases monomiais:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> x <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>bbasisevals1 <span class="ot">&lt;-</span> bbasisevals <span class="sc">%&gt;%</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>()</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>basis_plot <span class="ot">&lt;-</span> <span class="fu">left_join</span>(x1,bbasisevals1, <span class="at">by =</span> <span class="st">"rowname"</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>basis_plot <span class="sc">%&gt;%</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"monomial"</span>),</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"degree"</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"values"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(value) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(value, values, <span class="at">group =</span> degree, <span class="at">color =</span> degree))<span class="sc">+</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"X"</span>, <span class="at">y =</span> <span class="st">"fns bases"</span>, <span class="at">title =</span> <span class="st">"Bases monomiais com k=6"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="bases-de-fourier" class="level3">
+<h3 class="anchored" data-anchor-id="bases-de-fourier">1.3 Bases de Fourier</h3>
+<p>A análise de Fourier requer que sejam definidos o domínio, o período de oscilação e o número de funções de base.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">length.out=</span><span class="dv">100</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>fbasis_obj <span class="ot">&lt;-</span> <span class="fu">create.fourier.basis</span>(<span class="at">rangeval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">nbasis=</span><span class="dv">65</span>, <span class="at">period =</span> <span class="dv">1</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>fbasisevals <span class="ot">&lt;-</span> <span class="fu">eval.basis</span>(x, fbasis_obj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para visualizar as bases de Fourier:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> x <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>()</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>fbasisevals1 <span class="ot">&lt;-</span> fbasisevals <span class="sc">%&gt;%</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>()</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>basis_plot <span class="ot">&lt;-</span> <span class="fu">left_join</span>(x1,fbasisevals1, <span class="at">by =</span> <span class="st">"rowname"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># plotando as bases de fourier</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>basis_plot <span class="sc">%&gt;%</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>) <span class="sc">%&gt;%</span> <span class="co"># escolhendo o número de bases no plot - 2:5 três bases</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_longer</span>(</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="fu">c</span>(<span class="st">"sin"</span>,<span class="st">"co"</span>)),</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"degree"</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"values"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(value) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value, values, <span class="at">group =</span> degree, <span class="at">color =</span> degree))<span class="sc">+</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"X"</span>, <span class="at">y =</span> <span class="st">"fns bases"</span>, <span class="at">title =</span> <span class="st">"Três primeiras bases de Fourie"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="bases-b-spline" class="level3">
+<h3 class="anchored" data-anchor-id="bases-b-spline">1.4 Bases B-Spline</h3>
+<p>A base B-spline requer o domínio, as funções de base numérica e o grau.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">length.out=</span><span class="dv">100</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>bsbasis_obj <span class="ot">&lt;-</span> <span class="fu">create.bspline.basis</span>(<span class="at">rangeval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">nbasis=</span><span class="dv">10</span>, <span class="at">norder=</span><span class="dv">4</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>bsbasisevals <span class="ot">&lt;-</span> <span class="fu">eval.basis</span>(x, bsbasis_obj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para visualizar as bases de B-spline:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> x <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>()</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>bsbasisevals1 <span class="ot">&lt;-</span> bsbasisevals <span class="sc">%&gt;%</span> </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>()</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>basis_plot <span class="ot">&lt;-</span> <span class="fu">left_join</span>(x1,bsbasisevals1, <span class="at">by =</span> <span class="st">"rowname"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># plotando B-Spline basis</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>basis_plot <span class="sc">%&gt;%</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">12</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"bspl"</span>),</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"degree"</span>,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"values"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(value) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value, values, <span class="at">group =</span> degree, <span class="at">color =</span> degree))<span class="sc">+</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"X"</span>, <span class="at">y =</span> <span class="st">"fns bases"</span>, <span class="at">title =</span> <span class="st">"B-spline cúbica com k=10"</span>)<span class="sc">+</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Testando diferentes valores de <code>nbasis</code> e/ou <code>norder</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># norder =2</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">length.out=</span><span class="dv">100</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>bsbasis_obj <span class="ot">&lt;-</span> <span class="fu">create.bspline.basis</span>(<span class="at">rangeval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">nbasis=</span><span class="dv">10</span>, <span class="at">norder=</span><span class="dv">2</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>bsbasisevals <span class="ot">&lt;-</span> <span class="fu">eval.basis</span>(x, bsbasis_obj)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> x <span class="sc">%&gt;%</span> </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>()</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>bsbasisevals1 <span class="ot">&lt;-</span> bsbasisevals <span class="sc">%&gt;%</span> </span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>()</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>basis_plot <span class="ot">&lt;-</span> <span class="fu">left_join</span>(x1,bsbasisevals1, <span class="at">by =</span> <span class="st">"rowname"</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co"># plotando B-Spline basis</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>basis_plot <span class="sc">%&gt;%</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">12</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"bspl"</span>),</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"degree"</span>,</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"values"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(value) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value, values, <span class="at">group =</span> degree, <span class="at">color =</span> degree))<span class="sc">+</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"X"</span>, <span class="at">y =</span> <span class="st">"fns bases"</span>, <span class="at">title =</span> <span class="st">"B-spline linear com k=10"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="outras-bases" class="level3">
+<h3 class="anchored" data-anchor-id="outras-bases">1.5 Outras bases</h3>
+<p>O pacote fda também oferece a possibilidade de construir outros tipos de bases. Para visualizar a lista de bases disponíveis, você pode digitar ?create.+“tab”.</p>
+</section>
+</section>
+<section id="o-objeto-dados-funcionais-fd-do-pacote-fda" class="level2">
+<h2 class="anchored" data-anchor-id="o-objeto-dados-funcionais-fd-do-pacote-fda">2 O objeto dados funcionais (FD) do pacote fda</h2>
+<p>Definido por uma base de funções e um vetor de coeficientes aleatórios correspondentes, a função fd desempenha o papel de construtor de objetos de dados funcionais.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>nb <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>coef <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(nb)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>bsbasis_obj <span class="ot">&lt;-</span> <span class="fu">create.bspline.basis</span>(<span class="at">rangeval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">nbasis=</span>nb, <span class="at">norder=</span><span class="dv">4</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>fd_obj <span class="ot">&lt;-</span> <span class="fu">fd</span>(coef, bsbasis_obj)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>fd_eval <span class="ot">&lt;-</span> <span class="fu">eval.fd</span>(x, fd_obj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para visualizar as bases de aleatórias:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> x <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>()</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>fd_eval1 <span class="ot">&lt;-</span> fd_eval <span class="sc">%&gt;%</span> </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>()</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>basis_plot <span class="ot">&lt;-</span> <span class="fu">left_join</span>(x1,fd_eval1, <span class="at">by =</span> <span class="st">"rowname"</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># plotando B-Spline basis</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>basis_plot <span class="sc">%&gt;%</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>   <span class="fu">pivot_longer</span>(</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"reps"</span>),</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"degree"</span>,</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"values"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(value) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value, values, <span class="at">group =</span> degree, <span class="at">color =</span> degree))<span class="sc">+</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"X"</span>, <span class="at">y =</span> <span class="st">"fns bases"</span>, <span class="at">title =</span> <span class="st">"Função aleatória usando B-spline"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Tente executar o código acima várias vezes. Tente também executar o código com um número diferente de funções base, por exemplo nb &lt;- 5, nb &lt;- 15, nb &lt;- 30.</p>
+<p>Para gerar (n = 20) múltiplas funções aleatórias você pode criar uma matriz de coeficientes aleatórios com dimensão de #bases por n; por exemplo.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span> ; nb <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>coef <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(n<span class="sc">*</span>nb),nb,n)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># dim(coefs)   # [1]  10 20</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>bsbasis_obj <span class="ot">&lt;-</span> <span class="fu">create.bspline.basis</span>(<span class="at">rangeval=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">nbasis=</span>nb, <span class="at">norder=</span><span class="dv">4</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>fd_obj <span class="ot">&lt;-</span> <span class="fu">fd</span>(coef, bsbasis_obj)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">length.out =</span> <span class="dv">100</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>fd_eval <span class="ot">&lt;-</span> <span class="fu">eval.fd</span>(x, fd_obj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para visualizar as funções aleatórias:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> x <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>()</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>fd_eval1 <span class="ot">&lt;-</span> fd_eval <span class="sc">%&gt;%</span> </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>()</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>basis_plot <span class="ot">&lt;-</span> <span class="fu">left_join</span>(x1,fd_eval1, <span class="at">by =</span> <span class="st">"rowname"</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>basis_plot <span class="sc">%&gt;%</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># select(2:12) %&gt;% # escolhendo o número de bases no plot - 2:5 três bases</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"reps"</span>),</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"degree"</span>,</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"values"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(value) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(value, values, <span class="at">group =</span> degree, <span class="at">color =</span> degree))<span class="sc">+</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">+</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"X"</span>, <span class="at">y =</span> <span class="st">"fns bases"</span>, <span class="at">title =</span> <span class="st">"20 Funções aleatórias usando B-spline"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Algumas outras funções úteis do pacote fda:</p>
+<ol type="1">
+<li><p><code>deriv.fd</code>: fornece a derivada de um objeto fd (o valor retornado também é um objeto fd); por exemplo. tente <code>drfd_obj &lt;- deriv.fd(fd_obj, 1)</code>; <code>eval.fd(drfd_obj, x)</code>.</p></li>
+<li><p>podemos fazer aritmética com os objetos fd; por exemplo. <code>eval.fd(fd_obj[1]+fd_obj[2], x)</code></p></li>
+<li><p>operações estatísticas; por exemplo. <code>mean(fd_obj)</code> ou <code>std.fd(fd_obj)</code></p></li>
+</ol>
+</section>
+<section id="regressão-linear-em-funções-de-base-ols" class="level2">
+<h2 class="anchored" data-anchor-id="regressão-linear-em-funções-de-base-ols">3 Regressão linear em funções de base (OLS)</h2>
+<p>Aqui, tentaremos usar diferentes funções básicas para suavizar os dados meteorológicos canadenses, que estão disponíveis no pacote fda.</p>
+<p>(Ilustrado com base de Fourier)</p>
+<p>Vamos nos concentrar na precipitação média diária de Vancouver (transformação log), representada por apenas uma das curvas observadas.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"CanadianWeather"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#str(CanadianWeather)</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#view(CanadianWeather$dailyAv)</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>months <span class="ot">&lt;-</span> <span class="fu">row.names</span>(CanadianWeather<span class="sc">$</span>dailyAv) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>()</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>precipitation_log <span class="ot">&lt;-</span> CanadianWeather<span class="sc">$</span>dailyAv <span class="sc">%&gt;%</span> </span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">contains</span>(<span class="fu">c</span>(<span class="st">"log"</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>() </span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>precipitation_log <span class="ot">&lt;-</span> <span class="fu">left_join</span>(months, precipitation_log, <span class="at">by =</span> <span class="st">"rowname"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>rowname)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>precipitation_log <span class="sc">%&gt;%</span> </span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(value, dplyr<span class="sc">::</span><span class="fu">contains</span>(<span class="st">"Vancouver"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate_wider_position</span>(value,<span class="fu">c</span>(<span class="at">month =</span> <span class="dv">3</span>,<span class="at">day=</span><span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">day_month =</span> <span class="fu">as.numeric</span>(day),</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">day_year =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(precipitation_log)</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day_year, Vancouver.log10precip))<span class="sc">+</span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"dia"</span>, <span class="at">y =</span> <span class="st">"precipitação-log"</span>, <span class="at">title =</span> <span class="st">"log da precipitação média diária de vancouver"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Agora vamos tentar suavizar os pontos observados usando a base de Fourier. Para usar a base de Fourier, precisamos definir o domínio, o período e o número da base.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>day <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">365</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>rangval<span class="ot">=</span><span class="fu">range</span>(day)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>period <span class="ot">=</span> <span class="dv">365</span> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>nbasis <span class="ot">=</span> <span class="dv">3</span> </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>fbasis<span class="ot">=</span><span class="fu">create.fourier.basis</span>(rangval, <span class="at">nbasis=</span>nbasis, <span class="at">period=</span>period)  </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>bvals <span class="ot">=</span> <span class="fu">eval.basis</span>(day, fbasis)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>Xbasis <span class="ot">=</span>bvals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Vamos ajustar um modelo de regressão linear utilizando as funções de base criadas (OLS).</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>lm.fit <span class="ot">=</span> <span class="fu">lm</span>(Vancouver.log10precip <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> Xbasis, <span class="at">data =</span> precipitation_log) </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizando o modelo</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>lm.fit <span class="sc">%&gt;%</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a> broom<span class="sc">::</span><span class="fu">augment</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">day_year =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">365</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day_year, <span class="st">`</span><span class="at">Vancouver.log10precip</span><span class="st">`</span>))<span class="sc">+</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(day_year, .fitted), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">linewidth =</span> <span class="dv">2</span>, <span class="at">linetype =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"dia"</span>, <span class="at">y =</span> <span class="st">"precipitação-log"</span>, <span class="at">title =</span> <span class="st">"Fourier-nbasis = 3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Calculando a segunda derivada da curva ajustada.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>yfitfd <span class="ot">=</span> <span class="fu">fd</span>(lm.fit<span class="sc">$</span>coefficients,fbasis)  <span class="co">#obtain FD object</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>yfit2D <span class="ot">=</span> <span class="fu">eval.fd</span>(day, yfitfd, <span class="dv">2</span>) <span class="co"># evaluate the 2nd deriv. of the fit at day</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>yfit2D <span class="sc">%&gt;%</span> </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_cols</span>(day) <span class="sc">%&gt;%</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="st">`</span><span class="at">...2</span><span class="st">`</span>, <span class="st">`</span><span class="at">...1</span><span class="st">`</span> ))<span class="sc">+</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"dia"</span>, <span class="at">y =</span> <span class="st">"2D precipitação-log"</span>, <span class="at">title =</span> glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"Média dos quadrados da 2D log-precp. = "</span>, </span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>               <span class="fu">round</span>(<span class="fu">mean</span>(yfit2D<span class="sc">^</span><span class="dv">2</span>),<span class="dv">2</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+• `` -&gt; `...1`
+• `` -&gt; `...2`</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Agora tente o código com nbasis = 13, nbasis = 27 e nbasis = 365. Qual é o efeito de usar diferentes números de bases?</p>
+</section>
+<section id="como-determinar-o-número-de-funções-de-base" class="level2">
+<h2 class="anchored" data-anchor-id="como-determinar-o-número-de-funções-de-base">4 Como determinar o número de funções de base?</h2>
+<p>Estudo de simulação (compensação de viés-variância)</p>
+<p>Para saber mais sobre o estudo de simulação, <a href="https://www4.stat.ncsu.edu/~davidian/st810a/simulation_handout.pdf">aqui</a> estão os slides preparados pelo Dr.&nbsp;Davidian.</p>
+<p>O exercício de simulação a seguir ilustra a compensação de viés-variância. Vamos nos concentrar em observar o efeito de diferentes escolhas de número de funções de base no viés, variância e erro quadrático médio (MSE).</p>
+<p>O viés e a variância do estimador <span class="math inline">\(\hat{X}(t)\)</span> são dados por:</p>
+<p><span class="math display">\[
+\text{Bias}(\hat{X}(t)) = E\{\hat{X}(t)\} - X(t), e
+\]</span></p>
+<p><span class="math display">\[
+\text{Var}(\hat{X}(t)) =\mathbb{E}\left[ \left( \hat{X}(t) - \mathbb{E}\left[ \hat{X}(t) \right] \right)^2 \right],
+\]</span></p>
+<p>respectivamente. Para t fixo, o MSE é definido como:</p>
+<p><span class="math display">\[
+\text{MSE}\left\{\hat{X}(t)\right\} = \mathbb{E}\left[ \left( \hat{X}(t) - \mathbb{E}\left[X(t) \right] \right)^2 \right] = \text{Bias}^2\{\hat{X}(t)\} + \text{Var}\{\hat{X}(t)\}
+\]</span></p>
+<p>Para uma curva <span class="math inline">\(Y(\cdot)\)</span> gostaríamos de selecionar o número de funções de base para minimizar o erro quadrado médio integrado, <span class="math inline">\(\int TMSE\{\hat{X}(t)\} dt.\)</span></p>
+<p>Podemos estudar essas estatísticas por meio de simulação. Neste caso, iremos gerar conjuntos de dados simulados que imitam as medições de precipitação realizadas em Vancouver <span class="math inline">\((l=26)\)</span>.</p>
+<p>A seguir está um breve esboço do experimento de simulação:</p>
+<ol type="1">
+<li>Suavize as medições de precipitação de Vancouver, <span class="math inline">\(Y(t_j)\)</span>, usando B-spline e obtenha</li>
+</ol>
+<ul>
+<li><p>a curva ajustada, <span class="math inline">\(\hat{X}_0(\cdot)\)</span>.</p></li>
+<li><p>Os resíduos, <span class="math inline">\(\epsilon_j = Y(t_j) - \hat{X}_0(t_j)\)</span>.</p></li>
+</ul>
+<ol start="2" type="1">
+<li><p>Assuma que a curva ajustada, <span class="math inline">\(\hat{X}_0(\cdot)\)</span>, é a “verdadeira” curva subjacente, <span class="math inline">\(X(\cdot)\)</span>.</p></li>
+<li><p>Gere um conjunto de dados simulados adicionando resíduos, <span class="math inline">\(epsilon^*_j\)</span>, reamostrados aleatoriamente à curva subjacente “verdadeira”,<span class="math inline">\(X(\cdot)\)</span>; em outras palavras, obtenha <span class="math inline">\(Y^*_j\)</span> por meio da adição dos resíduos reamostrados à curva subjacente <span class="math inline">\(Y^*_j = X(t_j) + \epsilon^*_j\)</span>.</p></li>
+</ol>
+<p>Repita o Passo 3 para gerar muitos conjuntos de dados simulados!</p>
+<p>Ajuste cada conjunto de dados simulados usando uma base de Fourier com K funções de base para várias escolhas de K.</p>
+<p>Para cada K, calcule o viés, a variância e o MSE.</p>
+<p>A seguir, passarei pelo código de simulação para um conjunto de dados simulado. Primeiro, definimos a resposta de interesse.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"CanadianWeather"</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">#str(CanadianWeather)</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">#view(CanadianWeather$dailyAv)</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>months <span class="ot">&lt;-</span> <span class="fu">row.names</span>(CanadianWeather<span class="sc">$</span>dailyAv) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>()</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>precipitation <span class="ot">&lt;-</span> CanadianWeather<span class="sc">$</span>dailyAv <span class="sc">%&gt;%</span> </span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">contains</span>(<span class="fu">c</span>(<span class="st">"Precipitation"</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>() </span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>precipitation <span class="ot">&lt;-</span> <span class="fu">left_join</span>(months, precipitation, <span class="at">by =</span> <span class="st">"rowname"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>rowname)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Plotando os dados de precipitação</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>vancouver_precip <span class="ot">&lt;-</span> precipitation <span class="sc">%&gt;%</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>     dplyr<span class="sc">::</span><span class="fu">select</span>(value, dplyr<span class="sc">::</span><span class="fu">contains</span>(<span class="st">"Vancouver"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">separate_wider_position</span>(value,<span class="fu">c</span>(<span class="at">month =</span> <span class="dv">3</span>,<span class="at">day=</span><span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>(</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">day_year =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(precipitation)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rename</span>(</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">precipitation_mm =</span> Vancouver.Precipitation.mm</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>      ) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>      janitor<span class="sc">::</span><span class="fu">clean_names</span>() </span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>vancouver_precip <span class="sc">%&gt;%</span> </span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day_year, precipitation_mm))<span class="sc">+</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Em seguida, construímos um estimador suave utilizando funções de base B-spline cúbicas penalizadas (Passo 1). Vamos considerar a linha preta como a ‘verdade’. Nesse caso, utilizamos a função <code>gam</code> (do pacote <code>mgcv</code>) para a suavização, a qual será explicada em breve.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mgcv)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>day <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">365</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">gam</span>(vancouver_precip<span class="sc">$</span>precipitation_mm <span class="sc">~</span><span class="fu">s</span>(day, <span class="at">k =</span> <span class="dv">10</span>, <span class="at">bs =</span> <span class="st">"cr"</span>), <span class="at">method=</span><span class="st">"REML"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Por simplicidade vamos plotar essa curva ajustada usando o pacote <code>ggplot2</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>vancouver_precip <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day_year, precipitation_mm))<span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y <span class="sc">~</span> splines<span class="sc">::</span><span class="fu">bs</span>(x, <span class="dv">10</span>), <span class="at">se =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Para gerar um conjunto de dados simulados (Passos 2-3)</p>
+<p>Verificando os resíduos do modelo gerado</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>fit <span class="sc">%&gt;%</span> </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">augment</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(.resid))<span class="sc">+</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">15</span>)<span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">&lt;-</span> fit <span class="sc">%&gt;%</span> </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>      broom<span class="sc">::</span><span class="fu">augment</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">420</span>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>plot_df <span class="sc">%&gt;%</span> </span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">Eps.star =</span> <span class="fu">sample</span>(resid, <span class="at">size =</span> <span class="dv">365</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">Y.star =</span> fitted <span class="sc">+</span> Eps.star</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day, Y.star))<span class="sc">+</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>)<span class="sc">+</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y <span class="sc">~</span> splines<span class="sc">::</span><span class="fu">bs</span>(x, <span class="dv">10</span>), <span class="at">se =</span> <span class="cn">FALSE</span>,<span class="at">linewidth =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(day,vancouver_precip_precipitation_mm), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>)<span class="sc">+</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(day,fitted), <span class="at">color =</span> <span class="st">"green"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># salvando os dados simulados</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>simulated_precip<span class="ot">&lt;-</span> plot_df <span class="sc">%&gt;%</span> </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>          <span class="fu">mutate</span>(</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">Eps.star =</span> <span class="fu">sample</span>(resid, <span class="at">size =</span> <span class="dv">365</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">Y.star =</span> fitted <span class="sc">+</span> Eps.star</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>          )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Os pontos em vermelho são os dados originais, em preto os simulados. A linha em azul é o modelo ajustado aos dados ariginais e a linha em verda o modelo ajustado aos dados simulados.</p>
+<p>Uma vez que geramos o conjunto de dados simulados, faremos a suavização utilizando a função de base de Fourier com K funções de base, para várias escolhas de K. Aqui consideramos 7 valores diferentes; <span class="math inline">\(K = 2 \cdot \text{c}(2:8) + 1\)</span></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>K.vec <span class="ot">=</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">8</span>)<span class="sc">+</span><span class="dv">1</span>;    <span class="co"># we consider 7 different values of k.</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># K.vec</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>t.day <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">365</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">length</span>(plot_df<span class="sc">$</span>resid)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>fbasis<span class="ot">=</span><span class="fu">create.fourier.basis</span>(<span class="at">rangeval =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">365</span>), <span class="at">nbasis=</span><span class="fu">max</span>(K.vec), <span class="at">period=</span><span class="dv">365</span>)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>bvals <span class="ot">=</span> <span class="fu">eval.basis</span>(t.day,fbasis)</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>Xfit <span class="ot">=</span> <span class="fu">array</span>(<span class="dv">0</span>, <span class="fu">c</span>(m, <span class="fu">length</span>(K.vec)))</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>index<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (K <span class="cf">in</span> K.vec){</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  index<span class="ot">=</span>index<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>  Xbasis <span class="ot">=</span> bvals[, <span class="dv">1</span><span class="sc">:</span>K]</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>  lm.fit <span class="ot">=</span> <span class="fu">lm</span>(Y.star<span class="sc">~</span><span class="dv">0</span><span class="sc">+</span>Xbasis, <span class="at">data =</span> simulated_precip)</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>  Xfit[,index] <span class="ot">=</span> <span class="fu">as.vector</span>(lm.fit<span class="sc">$</span>fitted.values)</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>Xfit_df <span class="ot">&lt;-</span> Xfit <span class="sc">%&gt;%</span> </span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_5 =</span> V1,</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_7 =</span> V2,</span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_9 =</span> V3,</span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_11 =</span> V4,</span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_13 =</span> V5,</span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_15 =</span> V6,</span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_17 =</span> V7</span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">day =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">365</span></span>
+<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a>models_plot <span class="ot">&lt;-</span> <span class="fu">left_join</span>(simulated_precip, Xfit_df, <span class="at">by =</span> <span class="st">"day"</span>) </span>
+<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a>models_plot <span class="sc">%&gt;%</span> </span>
+<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a> dplyr<span class="sc">::</span><span class="fu">select</span>(day,Y.star,vancouver_precip_precipitation_mm,<span class="fu">contains</span>(<span class="st">"model"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">contains</span>(<span class="st">"model"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(day) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day,value, <span class="at">group =</span> name, <span class="at">color =</span> name))<span class="sc">+</span></span>
+<span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.5</span>)<span class="sc">+</span></span>
+<span id="cb25-44"><a href="#cb25-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(day, Y.star), <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>)<span class="sc">+</span></span>
+<span id="cb25-45"><a href="#cb25-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(day, vancouver_precip_precipitation_mm), <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Agora, realizamos os passos acima para B=100 conjuntos de dados e calculamos o viés, a variância, o MSE (Erro Quadrático Médio) e o MSE integrado.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>K.vec <span class="ot">=</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">8</span>)<span class="sc">+</span><span class="dv">1</span>; </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>B<span class="ot">=</span><span class="dv">100</span> <span class="co">#B=10000</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>m <span class="ot">=</span> <span class="fu">length</span>(simulated_precip<span class="sc">$</span>resid)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>Xfit <span class="ot">=</span> <span class="fu">array</span>(<span class="dv">0</span>, <span class="fu">c</span>(B, m, <span class="fu">length</span>(K.vec)))</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>t.day <span class="ot">&lt;-</span> simulated_precip<span class="sc">$</span>day</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>fbasis<span class="ot">=</span><span class="fu">create.fourier.basis</span>(<span class="at">rangeval =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">365</span>), <span class="at">nbasis=</span><span class="fu">max</span>(K.vec), <span class="at">period=</span><span class="dv">365</span>)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>bvals <span class="ot">=</span> <span class="fu">eval.basis</span>(t.day,fbasis)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ----</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>set.seed0<span class="ot">=</span><span class="dv">1234</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(b <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>B){<span class="co">#b=1</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set.seed</span>(set.seed0<span class="sc">+</span>b)</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>  simulated_precip <span class="ot">&lt;-</span> plot_df <span class="sc">%&gt;%</span> </span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">mutate</span>( </span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">Eps.star =</span> <span class="fu">sample</span>(resid, <span class="at">size =</span> <span class="dv">365</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">Y.star =</span> fitted <span class="sc">+</span> Eps.star</span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># fit using Fourier basis and K basis functions</span></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>  index<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (k <span class="cf">in</span> K.vec){</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>    index<span class="ot">=</span>index<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>    Xbasis <span class="ot">=</span> bvals[, <span class="dv">1</span><span class="sc">:</span>k]</span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>    lm.fit <span class="ot">=</span> <span class="fu">lm</span>(Y.star<span class="sc">~</span><span class="dv">0</span><span class="sc">+</span>Xbasis, <span class="at">data =</span> simulated_precip)</span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>    Xfit[b,,index] <span class="ot">=</span> <span class="fu">as.vector</span>(lm.fit<span class="sc">$</span>fitted.values)</span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a>Mean.Est <span class="ot">=</span> <span class="fu">apply</span>(Xfit, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), mean)</span>
+<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a>Mean.Est2 <span class="ot">=</span> <span class="fu">apply</span>(Xfit, <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>), <span class="cf">function</span>(x) <span class="fu">mean</span>(x<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb26-35"><a href="#cb26-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-36"><a href="#cb26-36" aria-hidden="true" tabindex="-1"></a>Xtrue <span class="ot">&lt;-</span> simulated_precip<span class="sc">$</span>fitted</span>
+<span id="cb26-37"><a href="#cb26-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-38"><a href="#cb26-38" aria-hidden="true" tabindex="-1"></a>Bias <span class="ot">=</span> <span class="fu">apply</span>(Mean.Est, <span class="dv">2</span>, <span class="cf">function</span>(x) Xtrue<span class="sc">-</span>x)</span>
+<span id="cb26-39"><a href="#cb26-39" aria-hidden="true" tabindex="-1"></a>Var <span class="ot">=</span> Mean.Est2 <span class="sc">-</span> (Mean.Est)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb26-40"><a href="#cb26-40" aria-hidden="true" tabindex="-1"></a>Mse<span class="ot">=</span> Bias<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>Var</span>
+<span id="cb26-41"><a href="#cb26-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-42"><a href="#cb26-42" aria-hidden="true" tabindex="-1"></a>Mean_Bias2_L2 <span class="ot">=</span> <span class="fu">apply</span>(Bias<span class="sc">^</span><span class="dv">2</span>, <span class="dv">2</span>, mean) </span>
+<span id="cb26-43"><a href="#cb26-43" aria-hidden="true" tabindex="-1"></a>Var_L2 <span class="ot">=</span> <span class="fu">apply</span>(Var, <span class="dv">2</span>, mean) </span>
+<span id="cb26-44"><a href="#cb26-44" aria-hidden="true" tabindex="-1"></a>MSE_L2 <span class="ot">=</span> <span class="fu">apply</span>(Mse, <span class="dv">2</span>, mean)</span>
+<span id="cb26-45"><a href="#cb26-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-46"><a href="#cb26-46" aria-hidden="true" tabindex="-1"></a>bases_resid<span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(<span class="at">bases_number =</span> K.vec,</span>
+<span id="cb26-47"><a href="#cb26-47" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean_basis2 =</span> Mean_Bias2_L2,</span>
+<span id="cb26-48"><a href="#cb26-48" aria-hidden="true" tabindex="-1"></a>          <span class="at">var_L2 =</span> Var_L2,</span>
+<span id="cb26-49"><a href="#cb26-49" aria-hidden="true" tabindex="-1"></a>          <span class="at">MSE_L2 =</span> MSE_L2)</span>
+<span id="cb26-50"><a href="#cb26-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-51"><a href="#cb26-51" aria-hidden="true" tabindex="-1"></a>bases_resid <span class="sc">%&gt;%</span> </span>
+<span id="cb26-52"><a href="#cb26-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-53"><a href="#cb26-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(bases_number) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-54"><a href="#cb26-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(bases_number, value,<span class="at">group =</span> name, <span class="at">color =</span> name))<span class="sc">+</span></span>
+<span id="cb26-55"><a href="#cb26-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb26-56"><a href="#cb26-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb26-57"><a href="#cb26-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"número de funções de base"</span>, <span class="at">y =</span> <span class="st">"erro quadrático total"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Cross-validation (Validação Cruzada)</p>
+<p>Uma maneira de escolher o número de funções de base é a validação cruzada.</p>
+<p>[trecho dos apontamentos de aula :]</p>
+<ul>
+<li>Deixe de fora uma observação <span class="math inline">\((t_j, Y_j)\)</span>.</li>
+<li>Ajuste os dados restantes e obtenha <span class="math inline">\(\hat{X}_j(t_j)\)</span> para várias escolhas de <span class="math inline">\(K\)</span>.</li>
+<li>Escolha <span class="math inline">\(K\)</span> que minimize o escore de validação cruzada, definido como:</li>
+</ul>
+<p><span class="math display">\[CV(X) = \sum_{j=1}^{m} (Y_j - \hat{X}_j(t_j))^2\]</span></p>
+<p>Essas são as mesmas medições</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>vancouver_precip <span class="ot">&lt;-</span> precipitation <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(value, dplyr<span class="sc">::</span><span class="fu">contains</span>(<span class="st">"Vancouver"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate_wider_position</span>(value,<span class="fu">c</span>(<span class="at">month =</span> <span class="dv">3</span>,<span class="at">day=</span><span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">day_year =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(precipitation)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">precipitation_mm =</span> Vancouver.Precipitation.mm</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() </span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>K.vec <span class="ot">=</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">8</span>)<span class="sc">+</span><span class="dv">1</span>; m <span class="ot">=</span> <span class="fu">length</span>(vancouver_precip<span class="sc">$</span>day)</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>CVfit <span class="ot">=</span> <span class="fu">matrix</span>(<span class="dv">0</span>,  <span class="at">nrow=</span>m, <span class="at">ncol=</span><span class="fu">length</span>(K.vec))</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> vancouver_precip<span class="sc">$</span>precipitation_mm</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>t.day <span class="ot">&lt;-</span> vancouver_precip<span class="sc">$</span>day_year</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>fbasis<span class="ot">=</span><span class="fu">create.fourier.basis</span>(<span class="at">rangeval =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">365</span>), <span class="at">nbasis=</span><span class="fu">max</span>(K.vec), <span class="at">period=</span><span class="dv">365</span>)</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>bvals <span class="ot">=</span> <span class="fu">eval.basis</span>(t.day,fbasis)</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>m){</span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>  Y.star <span class="ot">=</span> y[<span class="sc">-</span>j]</span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># fit using Fourier basis and K basis functions</span></span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>  index<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb27-29"><a href="#cb27-29" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (K <span class="cf">in</span> K.vec){</span>
+<span id="cb27-30"><a href="#cb27-30" aria-hidden="true" tabindex="-1"></a>    index<span class="ot">=</span>index<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb27-31"><a href="#cb27-31" aria-hidden="true" tabindex="-1"></a>    Xbasis<span class="ot">=</span>bvals[, <span class="dv">1</span><span class="sc">:</span>K];</span>
+<span id="cb27-32"><a href="#cb27-32" aria-hidden="true" tabindex="-1"></a>    Xbasis.j <span class="ot">=</span>  Xbasis[<span class="sc">-</span>j, ]; </span>
+<span id="cb27-33"><a href="#cb27-33" aria-hidden="true" tabindex="-1"></a>    lm.fit <span class="ot">=</span> <span class="fu">lm</span>(Y.star<span class="sc">~</span><span class="dv">0</span><span class="sc">+</span>Xbasis.j); Xbasis.coeff <span class="ot">=</span> lm.fit<span class="sc">$</span>coefficients</span>
+<span id="cb27-34"><a href="#cb27-34" aria-hidden="true" tabindex="-1"></a>    y.fit <span class="ot">=</span> Xbasis<span class="sc">%*%</span>Xbasis.coeff</span>
+<span id="cb27-35"><a href="#cb27-35" aria-hidden="true" tabindex="-1"></a>    CVfit[j,index] <span class="ot">=</span> (y[j] <span class="sc">-</span> y.fit[j])<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb27-36"><a href="#cb27-36" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb27-37"><a href="#cb27-37" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb27-38"><a href="#cb27-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-39"><a href="#cb27-39" aria-hidden="true" tabindex="-1"></a>CV_L2 <span class="ot">=</span> <span class="fu">apply</span>(CVfit, <span class="dv">2</span>, sum)</span>
+<span id="cb27-40"><a href="#cb27-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-41"><a href="#cb27-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a>plot_resid <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(<span class="at">bases_number =</span> K.vec,</span>
+<span id="cb27-43"><a href="#cb27-43" aria-hidden="true" tabindex="-1"></a>                        <span class="at">CV_L2 =</span> CV_L2</span>
+<span id="cb27-44"><a href="#cb27-44" aria-hidden="true" tabindex="-1"></a>                        )</span>
+<span id="cb27-45"><a href="#cb27-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-46"><a href="#cb27-46" aria-hidden="true" tabindex="-1"></a>plot_resid <span class="sc">%&gt;%</span> </span>
+<span id="cb27-47"><a href="#cb27-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(bases_number, CV_L2))<span class="sc">+</span></span>
+<span id="cb27-48"><a href="#cb27-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb27-49"><a href="#cb27-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb27-50"><a href="#cb27-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Numero de funções base"</span>,</span>
+<span id="cb27-51"><a href="#cb27-51" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"erro total da validação cruzada"</span>,</span>
+<span id="cb27-52"><a href="#cb27-52" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"K=13 com o menor valor da validação cruzada"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Aqui nos concentramos nas medições médias de precipitação realizadas em Vancouver. (Atividade em grupo) Tente este exercício com as medições realizadas em Quebec <span class="math inline">\((l = 10)\)</span>. Ainda escolheria <span class="math inline">\(K = 13\)</span> como o número ótimo de funções de base? E em relação a outros locais?</p>
+<p>Verificando para Quebec!</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>quebec_precip <span class="ot">&lt;-</span> precipitation <span class="sc">%&gt;%</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a> dplyr<span class="sc">::</span><span class="fu">select</span>(value, dplyr<span class="sc">::</span><span class="fu">contains</span>(<span class="st">"Quebec"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate_wider_position</span>(value,<span class="fu">c</span>(<span class="at">month =</span> <span class="dv">3</span>,<span class="at">day=</span><span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">day_year =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(precipitation)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">precipitation_mm =</span> Quebec.Precipitation.mm</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() </span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>K.vec <span class="ot">=</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">8</span>)<span class="sc">+</span><span class="dv">1</span>; m <span class="ot">=</span> <span class="fu">length</span>(quebec_precip<span class="sc">$</span>day)</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>CVfit <span class="ot">=</span> <span class="fu">matrix</span>(<span class="dv">0</span>,  <span class="at">nrow=</span>m, <span class="at">ncol=</span><span class="fu">length</span>(K.vec))</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> quebec_precip<span class="sc">$</span>precipitation_mm</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>t.day <span class="ot">&lt;-</span> quebec_precip<span class="sc">$</span>day_year</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>fbasis<span class="ot">=</span><span class="fu">create.fourier.basis</span>(<span class="at">rangeval =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">365</span>), <span class="at">nbasis=</span><span class="fu">max</span>(K.vec), <span class="at">period=</span><span class="dv">365</span>)</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>bvals <span class="ot">=</span> <span class="fu">eval.basis</span>(t.day,fbasis)</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>m){</span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>  Y.star <span class="ot">=</span> y[<span class="sc">-</span>j]</span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># fit using Fourier basis and K basis functions</span></span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>  index<span class="ot">=</span><span class="dv">0</span></span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (K <span class="cf">in</span> K.vec){</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>    index<span class="ot">=</span>index<span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>    Xbasis<span class="ot">=</span>bvals[, <span class="dv">1</span><span class="sc">:</span>K];</span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>    Xbasis.j <span class="ot">=</span>  Xbasis[<span class="sc">-</span>j, ]; </span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>    lm.fit <span class="ot">=</span> <span class="fu">lm</span>(Y.star<span class="sc">~</span><span class="dv">0</span><span class="sc">+</span>Xbasis.j); Xbasis.coeff <span class="ot">=</span> lm.fit<span class="sc">$</span>coefficients</span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a>    y.fit <span class="ot">=</span> Xbasis<span class="sc">%*%</span>Xbasis.coeff</span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a>    CVfit[j,index] <span class="ot">=</span> (y[j] <span class="sc">-</span> y.fit[j])<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a>CV_L2 <span class="ot">=</span> <span class="fu">apply</span>(CVfit, <span class="dv">2</span>, sum)</span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a>plot_resid <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(<span class="at">bases_number =</span> K.vec,</span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a>                        <span class="at">CV_L2 =</span> CV_L2</span>
+<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a>plot_resid <span class="sc">%&gt;%</span> </span>
+<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(bases_number, CV_L2))<span class="sc">+</span></span>
+<span id="cb28-48"><a href="#cb28-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb28-49"><a href="#cb28-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Numero de funções base"</span>,</span>
+<span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"erro total da validação cruzada"</span>,</span>
+<span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"K=5 com o menor valor da validação cruzada"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Como verificamos o número ideal de funções base para Quebec é igual a 5.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>quebec_precip <span class="sc">%&gt;%</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day_year, precipitation_mm))<span class="sc">+</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y <span class="sc">~</span> splines<span class="sc">::</span><span class="fu">bs</span>(x, <span class="dv">5</span>), <span class="at">se =</span> <span class="cn">FALSE</span>)<span class="sc">+</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"dia"</span>, <span class="at">y =</span> <span class="st">"precipitação mm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="como-levar-em-consideração-a-suavidade-na-curva-subjacente" class="level2">
+<h2 class="anchored" data-anchor-id="como-levar-em-consideração-a-suavidade-na-curva-subjacente">5 Como levar em consideração a suavidade na curva subjacente?</h2>
+<p>Suavização com Penalidade de Rugosidade</p>
+<p>Conforme discutido na palestra, uma maneira melhor de controlar o viés e a variância é definir a suavidade de uma função e controlá-la por meio do parâmetro de penalidade λ.</p>
+<p>Primeiro, vamos analisar a curva suavizada para um parâmetro de penalidade específico. Aqui, novamente, usamos as medições de precipitação de Vancouver e construímos as funções de base b-spline. Observe a quantidade de funções de base que construímos! Sem a penalidade de rugosidade, o ajuste dos mínimos quadrados ordinários conecta cada uma das medições!</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># define domain, #knots, and #order to construct b-spline basis</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>months <span class="ot">&lt;-</span> <span class="fu">row.names</span>(CanadianWeather<span class="sc">$</span>dailyAv) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>()</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>precipitation <span class="ot">&lt;-</span> CanadianWeather<span class="sc">$</span>dailyAv <span class="sc">%&gt;%</span> </span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">contains</span>(<span class="fu">c</span>(<span class="st">"Precipitation"</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>() </span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>precipitation <span class="ot">&lt;-</span> <span class="fu">left_join</span>(months, precipitation, <span class="at">by =</span> <span class="st">"rowname"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>rowname) </span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>vancouver_precip <span class="ot">&lt;-</span> precipitation <span class="sc">%&gt;%</span> </span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(value, dplyr<span class="sc">::</span><span class="fu">contains</span>(<span class="st">"Vancouver"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate_wider_position</span>(value,<span class="fu">c</span>(<span class="at">month =</span> <span class="dv">3</span>,<span class="at">day=</span><span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">day_year =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(precipitation)</span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">precipitation_mm =</span> Vancouver.Precipitation.mm</span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() </span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>t.day <span class="ot">&lt;-</span> vancouver_precip<span class="sc">$</span>day_year</span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> vancouver_precip<span class="sc">$</span>precipitation_mm</span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>y.basis  <span class="ot">&lt;-</span> <span class="fu">create.bspline.basis</span>(<span class="at">rangeval =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">365</span>), <span class="at">nbasis =</span> <span class="dv">365</span>, <span class="at">norder=</span><span class="dv">4</span>)</span>
+<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a>bvals <span class="ot">=</span> <span class="fu">eval.basis</span>(t.day, y.basis)</span>
+<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a>Xbasis <span class="ot">=</span>bvals; </span>
+<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-35"><a href="#cb30-35" aria-hidden="true" tabindex="-1"></a>lm.fit <span class="ot">=</span> <span class="fu">lm</span>(y <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> Xbasis)   </span>
+<span id="cb30-36"><a href="#cb30-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-37"><a href="#cb30-37" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">day_year =</span> t.day, <span class="at">prec_mm =</span> y ,<span class="at">fitted =</span> lm.fit<span class="sc">$</span>fitted.values) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-38"><a href="#cb30-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>()</span>
+<span id="cb30-39"><a href="#cb30-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-40"><a href="#cb30-40" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb30-41"><a href="#cb30-41" aria-hidden="true" tabindex="-1"></a>plot_df <span class="sc">%&gt;%</span> </span>
+<span id="cb30-42"><a href="#cb30-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day_year, prec_mm))<span class="sc">+</span></span>
+<span id="cb30-43"><a href="#cb30-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb30-44"><a href="#cb30-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>)<span class="sc">+</span></span>
+<span id="cb30-45"><a href="#cb30-45" aria-hidden="true" tabindex="-1"></a> <span class="fu">geom_line</span>(<span class="fu">aes</span>(day_year, fitted), <span class="at">color =</span> <span class="st">"green"</span>)<span class="sc">+</span></span>
+<span id="cb30-46"><a href="#cb30-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"dia"</span>,<span class="at">y=</span><span class="st">"precipitação mm"</span>, <span class="at">title=</span><span class="st">"365 bases de Fourier"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Agora vamos usar a penalidade de rugosidade λ e ver o seu efeito na suavidade do ajuste resultante.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>int2Lfd(m)</code>: use isso para definir o termo de penalidade de derivada de ordem m</p>
+<p><code>fdPar()</code>: define os parâmetros funcionais; neste caso, o termo de penalidade de segunda ordem da derivada e o parâmetro de suavização.</p>
+<p><code>ybasis  &lt;- create.bspline.basis(rangeval = c(1,365), nbasis = 365, norder=4)</code></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>tD2fdPar <span class="ot">=</span> <span class="fu">fdPar</span>(y.basis, <span class="at">Lfdobj=</span><span class="fu">int2Lfd</span>(<span class="dv">2</span>), <span class="at">lambda=</span>lambda)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>smooth.basis()</code>:suaviza os dados usando a penalidade de rugosidade e o parâmetro de suavização especificados em <code>tD2fdPar</code></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>tyfd <span class="ot">=</span> <span class="fu">smooth.basis</span>(t.day,y,tD2fdPar) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>names(tyfd) [1] “fd” “df” “gcv” “beta” “SSE” “penmat” “y2cMap”<br>
+“argvals” “y”</p>
+<ul>
+<li><code>fd</code> um objeto de dados funcionais contendo uma suavização dos dados.</li>
+<li><code>df</code> uma medida de graus de liberdade da suavização.</li>
+<li><code>gcv</code> o valor do critério de validação cruzada generalizado ou GCV.</li>
+<li><code>beta</code> os coeficientes de regressão associados às variáveis covariáveis.</li>
+<li><code>SSE</code> as somas dos quadrados do erro.</li>
+<li><code>penmat</code>: a matriz de penalidade.</li>
+<li><code>y2cMap</code> a matriz que mapeia os dados nos coeficientes: <span class="math inline">\(\left(\Phi^T \Phi + R\right)^{-1} \Phi^T\)</span></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(plot_df, <span class="at">smooth =</span> tyfd<span class="sc">$</span>fd<span class="sc">$</span>coefs[,<span class="dv">1</span>]) </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>plot_df <span class="sc">%&gt;%</span> </span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day_year, prec_mm))<span class="sc">+</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(day_year, smooth), <span class="at">color =</span> <span class="st">"green"</span>,<span class="at">linewidth =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"dia"</span>, <span class="at">y=</span><span class="st">"precipitação mm"</span>, <span class="at">title =</span> <span class="st">"Vancouver (lambda=10000)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>O ajuste resultante com o parâmetro de suavização <span class="math inline">\(λ=104\)</span> está bastante suave! (Atividade em grupo) Experimente valores diferentes de <span class="math inline">\(λ\)</span> <span class="math inline">\((λ=0,0001, λ=100, λ=108)\)</span> e discuta!</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">0.0001</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>tD2fdPar <span class="ot">=</span> <span class="fu">fdPar</span>(y.basis, <span class="at">Lfdobj=</span><span class="fu">int2Lfd</span>(<span class="dv">2</span>), <span class="at">lambda=</span>lambda)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>tyfd <span class="ot">=</span> <span class="fu">smooth.basis</span>(t.day,y,tD2fdPar) </span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(plot_df, <span class="at">smooth2 =</span> tyfd<span class="sc">$</span>fd<span class="sc">$</span>coefs[,<span class="dv">1</span>]) </span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>plot_df <span class="sc">%&gt;%</span> </span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day_year, prec_mm))<span class="sc">+</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(day_year, smooth2), <span class="at">color =</span> <span class="st">"green"</span>,<span class="at">linewidth =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>tD2fdPar <span class="ot">=</span> <span class="fu">fdPar</span>(y.basis, <span class="at">Lfdobj=</span><span class="fu">int2Lfd</span>(<span class="dv">2</span>), <span class="at">lambda=</span>lambda)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>tyfd <span class="ot">=</span> <span class="fu">smooth.basis</span>(t.day,y,tD2fdPar) </span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(plot_df, <span class="at">smooth3 =</span> tyfd<span class="sc">$</span>fd<span class="sc">$</span>coefs[,<span class="dv">1</span>]) </span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>plot_df <span class="sc">%&gt;%</span> </span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day_year, prec_mm))<span class="sc">+</span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(day_year, smooth3), <span class="at">color =</span> <span class="st">"green"</span>,<span class="at">linewidth =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">8</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>tD2fdPar <span class="ot">=</span> <span class="fu">fdPar</span>(y.basis, <span class="at">Lfdobj=</span><span class="fu">int2Lfd</span>(<span class="dv">2</span>), <span class="at">lambda=</span>lambda)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>tyfd <span class="ot">=</span> <span class="fu">smooth.basis</span>(t.day,y,tD2fdPar) </span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(plot_df, <span class="at">smooth4 =</span> tyfd<span class="sc">$</span>fd<span class="sc">$</span>coefs[,<span class="dv">1</span>]) </span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>plot_df <span class="sc">%&gt;%</span> </span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day_year, prec_mm))<span class="sc">+</span></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(day_year, smooth4), <span class="at">color =</span> <span class="st">"green"</span>,<span class="at">linewidth =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Existem várias maneiras de selecionar o <span class="math inline">\(λ\)</span> ótimo; por exemplo, validação cruzada (atividade extraclasse), validação cruzada generalizada (GCV), estimação da máxima verossimilhança restrita (ReML) e assim por diante. Aqui ilustramos a seleção do parâmetro de suavização usando o escore GCV. O escore GCV é definido como</p>
+<p><span class="math display">\[
+GCV(\lambda) = \frac{m}{m-df(\lambda)} \times \frac{SSE}{m-df(\lambda)}
+\]</span></p>
+<p>onde:</p>
+<p>m é o número total de observações nos dados, <span class="math inline">\(df(\lambda)\)</span> é a medida de graus de liberdade da suavização para o parâmetro de <span class="math inline">\(suavização \lambda\)</span>, e SSE é a soma dos quadrados do erro.</p>
+<p>Geralmente, o GCV resulta em um ajuste mais suave do que o CV porque a qualidade do ajuste (medida pela SSE) é penalizada tanto pelos graus de liberdade df(λ) quanto pelo parâmetro de suavização λ.</p>
+<p>O código a seguir usa o GCV para selecionar o λ ótimo, considerando 71 valores candidatos.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>logl<span class="ot">=</span><span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">12</span>, <span class="at">len=</span><span class="dv">71</span>)  </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co">#range(exp(logl))</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>gcv <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">71</span>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(logl))){</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  lambda<span class="ot">=</span><span class="fu">exp</span>(logl[i])</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>  tD2fdPar <span class="ot">=</span> <span class="fu">fdPar</span>(y.basis,<span class="at">Lfdobj=</span><span class="fu">int2Lfd</span>(<span class="dv">2</span>),<span class="at">lambda=</span>lambda)</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>  tyfd <span class="ot">=</span> <span class="fu">smooth.basis</span>(t.day,y,tD2fdPar)</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>  gcv[i] <span class="ot">=</span> tyfd<span class="sc">$</span>gcv</span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="co"># PLOT GCV of FIT versus log lambda</span></span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>gcv <span class="sc">%&gt;%</span> </span>
+<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble_col</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">logl =</span> logl</span>
+<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(logl, value))<span class="sc">+</span></span>
+<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"log lambda"</span>, <span class="at">y=</span><span class="st">"GCV"</span>, <span class="at">title =</span> <span class="st">"GCV(log.lambda)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-37-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>O parâmetro de suavização ótimo selecionado usando o GCV é 992.2747156 e o ajuste resultante é apresentado abaixo.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>index.logl.opt <span class="ot">=</span> <span class="fu">which</span>(gcv<span class="sc">==</span><span class="fu">min</span>(gcv))</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>lambda.opt <span class="ot">=</span> <span class="fu">exp</span>(logl[index.logl.opt])</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>tD2fdPar <span class="ot">=</span> <span class="fu">fdPar</span>(y.basis,<span class="at">Lfdobj=</span><span class="fu">int2Lfd</span>(<span class="dv">2</span>),<span class="at">lambda=</span>lambda.opt)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>tyfd <span class="ot">=</span> <span class="fu">smooth.basis</span>(t.day,y,tD2fdPar)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">day_year =</span> t.day, <span class="at">prec_mm =</span> y ,<span class="at">fitted =</span> lm.fit<span class="sc">$</span>fitted.values) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>()</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>plot_df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(plot_df, <span class="at">best_smooth =</span> tyfd<span class="sc">$</span>fd<span class="sc">$</span>coefs[,<span class="dv">1</span>]) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>()</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>plot_df <span class="sc">%&gt;%</span> </span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day_year, prec_mm))<span class="sc">+</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(day_year, best_smooth), <span class="at">color=</span> <span class="st">"green"</span>, <span class="at">linewidth =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"dai"</span>, <span class="at">y=</span><span class="st">"precipitação mm"</span>, <span class="at">title =</span> <span class="st">"parâmetro de suavização ótimo = 992"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-38-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Outras funções de suavização disponíveis no R</p>
+<ul>
+<li>A função <code>gam</code> no pacote <code>mgcv</code> possui diversas funções de base e métodos de seleção.
+<ul>
+<li>para o parâmetro de suavização. É flexível e útil!</li>
+<li>Vamos utilizar esta função nos capítulos seguintes!</li>
+<li>Exemplo (atividade extraclasse):</li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mgcv)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">=</span> <span class="fu">gam</span>(y <span class="sc">~</span> <span class="fu">s</span>(t.day, <span class="at">k =</span> <span class="dv">30</span>, <span class="at">bs =</span> <span class="st">"cr"</span>), <span class="at">method =</span> <span class="st">'REML'</span>)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>fit <span class="sc">%&gt;%</span> </span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">augment</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(t.day,y))<span class="sc">+</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(t.day, .fitted), <span class="at">color=</span><span class="st">"green"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>)<span class="sc">+</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"usando a função gam (REML)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Função “ksmooth” (suavização por regressão do núcleo)
+<ul>
+<li>Exemplo (atividade extraclasse): experimente um núcleo gaussiano (“normal”) e diferentes larguras de banda (0.1, 10, 30).</li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>fit2 <span class="ot">=</span> <span class="fu">ksmooth</span>(t.day, y, <span class="at">kernel =</span> <span class="fu">c</span>(<span class="st">"box"</span>), <span class="at">bandwidth =</span> <span class="dv">10</span>)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>fit <span class="sc">%&gt;%</span> </span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a> broom<span class="sc">::</span><span class="fu">augment</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">ksmooth_box =</span> fit2<span class="sc">$</span>y</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(t.day,y))<span class="sc">+</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(t.day, ksmooth_box), <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>)<span class="sc">+</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"using ksmooth function (box)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-40-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co"># kernel (“normal”) - bandwidth = 10</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>fit3 <span class="ot">=</span> <span class="fu">ksmooth</span>(t.day, y, <span class="at">kernel =</span> <span class="fu">c</span>(<span class="st">"normal"</span>), <span class="at">bandwidth =</span> <span class="dv">10</span>)</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>fit <span class="sc">%&gt;%</span> </span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">augment</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">ksmooth_normal =</span> fit3<span class="sc">$</span>y</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(t.day,y))<span class="sc">+</span></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(t.day, ksmooth_normal), <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>)<span class="sc">+</span></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"using ksmooth function (normal|10)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-40-2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># kernel (“normal”) - bandwidth = 0.1</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>fit4 <span class="ot">=</span> <span class="fu">ksmooth</span>(t.day, y, <span class="at">kernel =</span> <span class="fu">c</span>(<span class="st">"normal"</span>), <span class="at">bandwidth =</span> <span class="fl">0.1</span>)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>fit <span class="sc">%&gt;%</span> </span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">augment</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">ksmooth_normal =</span> fit4<span class="sc">$</span>y</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(t.day,y))<span class="sc">+</span></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(t.day, ksmooth_normal), <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>)<span class="sc">+</span></span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"using ksmooth function (normal|0.1)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-40-3.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co"># kernel (“normal”) - bandwidth = 0.1</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>fit5 <span class="ot">=</span> <span class="fu">ksmooth</span>(t.day, y, <span class="at">kernel =</span> <span class="fu">c</span>(<span class="st">"normal"</span>), <span class="at">bandwidth =</span> <span class="dv">30</span>)</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>fit <span class="sc">%&gt;%</span> </span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">augment</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">ksmooth_normal =</span> fit5<span class="sc">$</span>y</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(t.day,y))<span class="sc">+</span></span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(t.day, ksmooth_normal), <span class="at">color=</span><span class="st">"red"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>)<span class="sc">+</span></span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"using ksmooth function (normal|30)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia02_files/figure-html/unnamed-chunk-40-4.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="resumo" class="level1">
+<h1>5 Resumo</h1>
+<ul>
+<li>Explorou diversas funções de base.</li>
+<li>Realizou ajustes de curvas suaves utilizando o método dos mínimos quadrados ordinários (OLS).</li>
+<li>Discutiu o trade-off entre viés e variância, assim como a seleção do número de funções de base através da validação cruzada.</li>
+<li>Também realizou ajustes de curvas suaves utilizando o critério de erro quadrático penalizado.</li>
+<li>Por fim, foram discutidos diversos métodos para selecionar o parâmetro de suavização ótimo (λ).</li>
+</ul>
+<p>Atividades em Grupo / Atividades Extraclasse:</p>
+<ol type="1">
+<li>Página 2: Experimente diferentes números de funções de base e faça ajustes utilizando o método dos mínimos quadrados ordinários (atividade em grupo).</li>
+<li>Página 3: Exercício de validação cruzada com medidas de precipitação transformadas em logaritmo obtidas em Quebec (atividade em grupo).</li>
+<li>Página 4: Experimente as funções gam e ksmooth, especialmente a função gam, pois a utilizaremos nos capítulos seguintes! (atividade extraclasse).</li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

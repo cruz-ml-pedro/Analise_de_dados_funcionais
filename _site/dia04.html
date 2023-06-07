@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Dia-04</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">
+ <span class="menu-text">Introdução à Análise de Dados Funcionais</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dia01.html">
+ <span class="menu-text">Dia-01</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dia02.html">
+ <span class="menu-text">Dia-02</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dia03.html">
+ <span class="menu-text">Dia-03</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./dia04.html" aria-current="page">
+ <span class="menu-text">Dia-04</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dia05.html">
+ <span class="menu-text">Dia-05</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#modelos-lineares-funcionais-secao-4" id="toc-modelos-lineares-funcionais-secao-4" class="nav-link active" data-scroll-target="#modelos-lineares-funcionais-secao-4">Modelos lineares funcionais {secao-4}</a></li>
+  <li><a href="#tópicos-de-hoje" id="toc-tópicos-de-hoje" class="nav-link" data-scroll-target="#tópicos-de-hoje">Tópicos de hoje:</a>
+  <ul class="collapse">
+  <li><a href="#scalar-on-function-regression-model" id="toc-scalar-on-function-regression-model" class="nav-link" data-scroll-target="#scalar-on-function-regression-model">1 Scalar-on-function regression model</a></li>
+  <li><a href="#regressão-de-componentes-principais-funcionais-fpc" id="toc-regressão-de-componentes-principais-funcionais-fpc" class="nav-link" data-scroll-target="#regressão-de-componentes-principais-funcionais-fpc">1.1 Regressão de componentes principais funcionais (FPC)</a>
+  <ul class="collapse">
+  <li><a href="#primeiro-passo" id="toc-primeiro-passo" class="nav-link" data-scroll-target="#primeiro-passo">Primeiro passo</a></li>
+  <li><a href="#passo-dois" id="toc-passo-dois" class="nav-link" data-scroll-target="#passo-dois">Passo dois</a></li>
+  </ul></li>
+  <li><a href="#modelo-linear-funcional-com-base-mista" id="toc-modelo-linear-funcional-com-base-mista" class="nav-link" data-scroll-target="#modelo-linear-funcional-com-base-mista">2 Modelo linear funcional com base mista</a></li>
+  <li><a href="#regressão-de-função-em-escalar-fos" id="toc-regressão-de-função-em-escalar-fos" class="nav-link" data-scroll-target="#regressão-de-função-em-escalar-fos">3 Regressão de Função em Escalar (FoS)</a></li>
+  <li><a href="#regressão-de-função-em-função-fof---modelo-concorrente" id="toc-regressão-de-função-em-função-fof---modelo-concorrente" class="nav-link" data-scroll-target="#regressão-de-função-em-função-fof---modelo-concorrente">4 Regressão de função em função (FoF) - Modelo Concorrente</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Dia-04</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+
+</div>
+<section id="modelos-lineares-funcionais-secao-4" class="level1">
+<h1>Modelos lineares funcionais {secao-4}</h1>
+<p>Os modelos lineares funcionais são uma classe de modelos estatísticos que lidam com dados funcionais, ou seja, observações que são representadas como funções contínuas ao invés de valores numéricos isolados. Esses modelos são amplamente utilizados para análise de dados funcionais em várias áreas, como biologia, economia, engenharia e ciências da saúde.</p>
+<p>A ideia básica por trás dos modelos lineares funcionais é estender a estrutura dos modelos lineares tradicionais para acomodar dados funcionais. Em um modelo linear funcional, a variável de resposta é modelada como uma combinação linear de funções base, onde os coeficientes de regressão indicam o efeito das funções base na resposta. Essas funções base podem ser pré-determinadas, como funções polinomiais ou splines, ou podem ser obtidas de forma adaptativa a partir dos próprios dados, por exemplo, usando a Análise de Componentes Principais Funcionais (fPCA).</p>
+<p>Ajustar um modelo linear funcional envolve estimar os coeficientes de regressão e possivelmente outros parâmetros do modelo, como a variância do erro. Diversas técnicas de estimação estão disponíveis para modelos lineares funcionais, incluindo mínimos quadrados ponderados, estimação por máxima verossimilhança e métodos baseados em penalização.</p>
+<p>Uma vantagem dos modelos lineares funcionais é que eles permitem modelar a estrutura temporal dos dados e capturar a variabilidade e dependência funcional ao longo do tempo. Isso torna esses modelos particularmente adequados para dados longitudinais ou séries temporais, onde a variação e a relação entre as observações podem mudar ao longo do tempo.</p>
+<p>Em resumo, os modelos lineares funcionais são uma poderosa ferramenta estatística para análise de dados funcionais, permitindo modelar e interpretar relações entre variáveis em um contexto funcional e temporal.</p>
+</section>
+<section id="tópicos-de-hoje" class="level1">
+<h1>Tópicos de hoje:</h1>
+<ul>
+<li><p>Regressão de escalar em função - SoF (pfr)</p></li>
+<li><p>Regressão de componentes principais funcionais (FPC)</p></li>
+<li><p>Modelo linear funcional com base restrita</p></li>
+<li><p>Gráficos interativos (plot_shiny) para regressão de escalar em função</p></li>
+<li><p>Função em escalar - FoS (pffr)</p></li>
+<li><p>Função em função - FoF (pffr)</p></li>
+<li><p>Modelos lineares funcionais simultâneos</p></li>
+</ul>
+<p>[Código fornecido por cortesia de Arnab Maity]</p>
+<section id="scalar-on-function-regression-model" class="level2">
+<h2 class="anchored" data-anchor-id="scalar-on-function-regression-model">1 Scalar-on-function regression model</h2>
+<p>“Scalar-on-function regression model” pode ser traduzido como “modelo de regressão escalar em função”. Nesse contexto, “scalar” se refere a um valor único, enquanto “function” se refere a uma função matemática que pode variar de acordo com uma variável independente. Portanto, um “scalar-on-function regression model” é um modelo de regressão que visa prever um valor único (escalar) com base em uma função variável.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>marathon_results_2017 <span class="ot">&lt;-</span>readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"marathon_results_2017.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>marathon_df <span class="ot">&lt;-</span> marathon_results_2017 <span class="sc">%&gt;%</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">`</span><span class="at">...1</span><span class="st">`</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            Bib,City,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            State,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>            Country,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            Citizen,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">...10</span><span class="st">`</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            Division,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            Gender,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            Overall,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">Proj Time</span><span class="st">`</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>mutate_seconds <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  lubridate<span class="sc">::</span><span class="fu">hour</span>(x)<span class="sc">*</span> <span class="dv">3600</span> <span class="sc">+</span> lubridate<span class="sc">::</span><span class="fu">minute</span>(x) <span class="sc">*</span> <span class="dv">60</span> <span class="sc">+</span> lubridate<span class="sc">::</span><span class="fu">second</span>(x) <span class="sc">*</span><span class="dv">1</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a> marathon_df <span class="ot">&lt;-</span> </span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>   marathon_df <span class="sc">%&gt;%</span> </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mutate</span>(</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>          <span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="fu">c</span>(<span class="st">"x"</span>,<span class="st">"half"</span>)), lubridate<span class="sc">::</span>hms),</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>          <span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="fu">c</span>(<span class="st">"x"</span>,<span class="st">"half"</span>,<span class="st">"pace"</span>, <span class="st">"official_time"</span>)), mutate_seconds),</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">5</span><span class="st">`</span> <span class="ot">=</span> (<span class="dv">5000</span><span class="sc">/</span> <span class="st">`</span><span class="at">x5k</span><span class="st">`</span>)<span class="sc">*</span><span class="fl">3.6</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">10</span><span class="st">`</span> <span class="ot">=</span> (<span class="dv">10000</span><span class="sc">/</span> <span class="st">`</span><span class="at">x10k</span><span class="st">`</span>)<span class="sc">*</span><span class="fl">3.6</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">15</span><span class="st">`</span> <span class="ot">=</span> (<span class="dv">15000</span><span class="sc">/</span> <span class="st">`</span><span class="at">x15k</span><span class="st">`</span>)<span class="sc">*</span><span class="fl">3.6</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">20</span><span class="st">`</span> <span class="ot">=</span> (<span class="dv">20000</span><span class="sc">/</span> <span class="st">`</span><span class="at">x20k</span><span class="st">`</span>)<span class="sc">*</span><span class="fl">3.6</span>,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">21</span><span class="st">`</span> <span class="ot">=</span> (<span class="dv">21000</span><span class="sc">/</span> half)<span class="sc">*</span><span class="fl">3.6</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">25</span><span class="st">`</span> <span class="ot">=</span> (<span class="dv">25000</span><span class="sc">/</span> <span class="st">`</span><span class="at">x25k</span><span class="st">`</span>)<span class="sc">*</span><span class="fl">3.6</span>,</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">30</span><span class="st">`</span> <span class="ot">=</span> (<span class="dv">30000</span><span class="sc">/</span> <span class="st">`</span><span class="at">x30k</span><span class="st">`</span>)<span class="sc">*</span><span class="fl">3.6</span>,</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">35</span><span class="st">`</span> <span class="ot">=</span> (<span class="dv">35000</span><span class="sc">/</span> <span class="st">`</span><span class="at">x35k</span><span class="st">`</span>)<span class="sc">*</span><span class="fl">3.6</span>,</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">40</span><span class="st">`</span> <span class="ot">=</span> (<span class="dv">40000</span><span class="sc">/</span> <span class="st">`</span><span class="at">x40k</span><span class="st">`</span>)<span class="sc">*</span><span class="fl">3.6</span>,</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>          <span class="st">`</span><span class="at">42</span><span class="st">`</span> <span class="ot">=</span> (<span class="dv">42000</span><span class="sc">/</span> official_time)<span class="sc">*</span><span class="fl">3.6</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>   <span class="fu">rename</span>(</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>     <span class="at">names =</span> name</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>   )</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>marathon_df <span class="sc">%&gt;%</span> </span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">15</span><span class="sc">:</span><span class="dv">24</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="fu">as.numeric</span>(name)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(name) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(name,value, <span class="at">group =</span> names, <span class="at">color =</span> m_f))<span class="sc">+</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">color =</span> <span class="st">"grey"</span>)<span class="sc">+</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  <span class="co">#geom_point(color = "black", alpha = 0.7)+</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Velocidade Km/h"</span>)<span class="sc">+</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Km de maratona"</span>)<span class="sc">+</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Maratona - Velocidade"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Pergunta de interesse: Existe alguma relação entre o tempo total decorrido e o ritmo da corrida (perfis de milhas por minuto)?</p>
+<p>Agora podemos responder a essas perguntas usando o modelo de regressão linear funcional com resposta escalar e covariável funcional! (SoF)</p>
+<p>Lembrando:</p>
+<p><span class="math display">\[
+Y_i = \mu_Y + \int X_i(t) \beta(t) dt + \epsilon_i,
+\]</span></p>
+<p>onde Xi é modelado usando fPCA, <span class="math inline">\(X_i = \mu(t) + \sum_{i=1}^{n} \sum_{k=1}^{\infty} \xi_{ik}\phi_{k}(t)t)\)</span></p>
+<p>Lembrando que fPCA se refere à Análise de Componentes Principais Funcionais (Functional Principal Component Analysis) e <span class="math inline">\(\mu(t)\)</span> é a média da função, ξᵢₖ são os coeficientes de PCA e <span class="math inline">\(\phi_k(t)\)</span> são as funções de base de PCA.</p>
+</section>
+<section id="regressão-de-componentes-principais-funcionais-fpc" class="level2">
+<h2 class="anchored" data-anchor-id="regressão-de-componentes-principais-funcionais-fpc">1.1 Regressão de componentes principais funcionais (FPC)</h2>
+<p>Aqui ilustramos o ajuste de regressão linear funcional assumindo <span class="math inline">\(\beta(t) = \sum_{i=1}^{n} \sum_{k=1}^{\infty} \beta_{k}\phi_{k}(t)\)</span>. Primeiro carregamos o conjunto de dados e definimos a resposta e a covariável.</p>
+<section id="primeiro-passo" class="level3">
+<h3 class="anchored" data-anchor-id="primeiro-passo">Primeiro passo</h3>
+<p>O primeiro passo da estimativa é executar o fPCA na covariável funcional usando um dos softwares que implementam o fPCA (módulo 3); por exemplo, fpca.ssvd, fpca.face e fpca.sc no pacote refund / pca.fd no pacote fda / fpca.mle no pacote fpca / PACE no Matlab.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>speed <span class="ot">&lt;-</span> marathon_df <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="dv">15</span><span class="sc">:</span><span class="dv">24</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">150</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.matrix</span>()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>kms <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">21</span>,<span class="dv">25</span>,<span class="dv">30</span>,<span class="dv">35</span>,<span class="dv">40</span>,<span class="dv">42</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>final_time <span class="ot">&lt;-</span> marathon_df<span class="sc">$</span>official_time <span class="sc">%&gt;%</span> </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">150</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.matrix</span>()</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>fpca_res <span class="ot">&lt;-</span> <span class="fu">fpca.face</span>(<span class="at">Y=</span> speed ,<span class="at">pve =</span> <span class="fl">0.97</span>, <span class="at">argvals =</span> kms, <span class="at">knots =</span> <span class="dv">6</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#fpca_res &lt;- fpca.sc(X, argvals = miles, pve = 0.97)</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">length</span>(kms)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>efn <span class="ot">&lt;-</span> fpca_res<span class="sc">$</span>efunctions<span class="sc">*</span><span class="fu">sqrt</span>(m)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>eval <span class="ot">&lt;-</span> fpca_res<span class="sc">$</span>evalues<span class="sc">/</span>m</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>scr <span class="ot">&lt;-</span> fpca_res<span class="sc">$</span>scores<span class="sc">/</span><span class="fu">sqrt</span>(m)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>npc <span class="ot">&lt;-</span> fpca_res<span class="sc">$</span>npc</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(kms,efn) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">pc1 =</span> V2,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">pc2 =</span> V3</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"pc"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(kms) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(kms,value,<span class="at">group =</span> name, <span class="at">color =</span> name))<span class="sc">+</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"km"</span>,<span class="at">y=</span><span class="st">""</span>, <span class="at">title =</span> <span class="st">"Autofunções estimadas"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>k.pc <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>effect <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(eval[k.pc])<span class="sc">*</span>efn[,k.pc]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>mu_hat <span class="ot">&lt;-</span> fpca_res<span class="sc">$</span>mu</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(kms,efn[,k.pc]) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(kms, V2))<span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>))<span class="sc">+</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"km"</span>,<span class="at">y=</span><span class="st">""</span>, <span class="at">title =</span> <span class="st">"fCP-1"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mu_hat <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble_col</span>(<span class="at">column_name =</span> <span class="st">"mu.hat"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">effect_Plus =</span> mu.hat <span class="sc">+</span> effect,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">effect_less =</span> mu.hat <span class="sc">-</span> effect,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">kms =</span> kms</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(kms) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(kms, value, <span class="at">group =</span> name, <span class="at">color =</span> name))<span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"km"</span>,<span class="at">y=</span><span class="st">""</span>, <span class="at">title =</span> <span class="st">"fCP-1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>(Atividade para fazer em casa) Experimente o gráfico interativo dos resultados do fPCA (plot_shiny(fpca_res)) e interprete. (Módulo 3-3)</p>
+</section>
+<section id="passo-dois" class="level3">
+<h3 class="anchored" data-anchor-id="passo-dois">Passo dois</h3>
+<p>Agora, usando a matriz de escores estimados, faça uma regressão linear múltipla no vetor de respostas escalares <span class="math inline">\(Y\)</span> (tempo de conclusão). Obtenha os coeficientes estimados, <span class="math inline">\(\beta_j\)</span>’s.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">=</span> <span class="fu">lm</span>(final_time <span class="sc">~</span> scr) <span class="do">## Multiple linear regression</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># summary(out)</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>beta_hat <span class="ot">=</span> out<span class="sc">$</span>coefficients</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>beta_hat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)        scr1        scr2 
+  9013.1234    424.5687   -894.1181 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(out)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = final_time ~ scr)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-176.316  -34.756    2.237   29.209  177.537 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 9013.123      4.523 1992.94   &lt;2e-16 ***
+scr1         424.569      4.796   88.53   &lt;2e-16 ***
+scr2        -894.118     22.536  -39.67   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 55.39 on 147 degrees of freedom
+Multiple R-squared:  0.9846,    Adjusted R-squared:  0.9844 
+F-statistic:  4706 on 2 and 147 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>Uma vez que o fPCA selecionou os três primeiros componentes principais com base na porcentagem especificada da variância explicada, temos aqui três coeficientes de base correspondentes.</p>
+<p>Agora, para reconstruir a função do coeficiente de regressão,</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>beta_fn_hat <span class="ot">=</span> efn <span class="sc">%*%</span> <span class="fu">as.matrix</span>(beta_hat[<span class="sc">-</span><span class="dv">1</span>], <span class="at">col =</span> <span class="dv">1</span>) </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(kms,beta_fn_hat) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(kms,V2))<span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">2000</span>,<span class="dv">800</span>))<span class="sc">+</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Como podemos dar sentido ao coeficiente? Vamos nos concentrar em analisar três perfis de velocidade aleatórios:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>n.crv <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(speed)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>sel.crv <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>n, <span class="at">size=</span>n.crv, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>rand_speed <span class="ot">&lt;-</span> <span class="fu">t</span>(fpca_res<span class="sc">$</span>Yhat[sel.crv,])</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(kms,rand_speed) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">contains</span>(<span class="st">"V"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(kms) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(kms,value,<span class="at">group =</span> name,<span class="at">color=</span>name))<span class="sc">+</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  ind <span class="ot">&lt;-</span> sel.crv[i]</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  demeaned <span class="ot">&lt;-</span> fpca_res<span class="sc">$</span>Yhat[ind,]<span class="sc">-</span><span class="fu">as.vector</span>(fpca_res<span class="sc">$</span>mu)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">matplot</span>(kms, <span class="fu">t</span>(fpca_res<span class="sc">$</span>Yhat[sel.crv,]<span class="sc">-</span><span class="fu">t</span>(<span class="fu">matrix</span>(<span class="fu">rep</span>(fpca_res<span class="sc">$</span>mu,<span class="dv">3</span>), <span class="at">nrow=</span><span class="dv">10</span>))), </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">type=</span><span class="st">'l'</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">col =</span> <span class="st">'light grey'</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">xlab=</span><span class="st">"miles"</span>, <span class="at">ylab=</span><span class="st">"speed (demeaned)"</span>, <span class="at">main=</span><span class="st">""</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(kms, demeaned, <span class="at">type=</span><span class="st">'l'</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">'red'</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(kms, beta_fn_hat, <span class="at">type=</span><span class="st">'l'</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab=</span><span class="st">"miles"</span>, <span class="at">ylab =</span> <span class="st">"estimated coefficient fn"</span>, <span class="at">main=</span><span class="st">""</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(kms, demeaned<span class="sc">*</span>beta_fn_hat,<span class="at">type=</span><span class="st">'l'</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">'blue'</span>,</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab=</span><span class="st">"miles"</span>, <span class="at">ylab =</span> <span class="st">""</span>, <span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">55</span>, <span class="dv">70</span>),</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">main=</span><span class="fu">round</span>(<span class="fu">mean</span>(demeaned<span class="sc">*</span>beta_fn_hat), <span class="dv">2</span>))</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Por último, vamos analisar a bondade de ajuste estimada.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(final_time, out<span class="sc">$</span>fitted, <span class="at">cex=</span><span class="fl">0.5</span>, <span class="at">ylab=</span><span class="st">"Fitted"</span>, <span class="at">xlab=</span><span class="st">"Observed"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Rsq <span class="ot">=</span> <span class="dv">1</span><span class="sc">-</span><span class="fu">sum</span>((out<span class="sc">$</span>residuals)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span><span class="fu">sum</span>((final_time<span class="sc">-</span> <span class="fu">mean</span>(final_time))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>Rsq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.984621</code></pre>
+</div>
+</div>
+<p>Existem várias funções integradas que podem ajustar um modelo linear funcional usando fPCA: a função PACE-REG no pacote Matlab PACE; a função pfr no pacote refund; a função fRegress no pacote fda.</p>
+<p>Vantagens: computacionalmente simples e aplicável a qualquer design de amostragem. Desvantagens: forte pressuposto de que <span class="math inline">\(\beta(\cdot)\)</span> e <span class="math inline">\(X(\cdot)\)</span> estão no mesmo espaço e têm uma suavidade similar.</p>
+</section>
+</section>
+<section id="modelo-linear-funcional-com-base-mista" class="level2">
+<h2 class="anchored" data-anchor-id="modelo-linear-funcional-com-base-mista">2 Modelo linear funcional com base mista</h2>
+<p>Para superar algumas limitações do método anterior, Goldsmith et al.&nbsp;(2011) propuseram modelar a função de coeficiente <span class="math inline">\(\beta(\cdot)\)</span>) usando uma função de base truncada; no entanto, outras funções de base também são aplicáveis.</p>
+<p>Lembre-se de que, ao modelar <span class="math inline">\(X(\cdot)\)</span> usando eigenfunções e <span class="math inline">\(\beta(\cdot)\)</span> usando funções de base pré-definidas, temos -</p>
+<p><span class="math display">\[
+Y_i = \alpha + \xi^T_i J \beta,
+\]</span></p>
+<p>onde <span class="math inline">\(\boldsymbol{\xi}_i = [ \xi_{i1}, \xi_{i2}, \ldots, \xi_{iK} ]^T, J\)</span> é uma matriz <span class="math inline">\(K \times L\)</span> com o elemento <span class="math inline">\((k,ℓ)-th\)</span> dado por <span class="math inline">\(J_{k\ell} = \int \phi_k(t)\theta_\ell(t) dt\)</span>, e <span class="math inline">\(\boldsymbol{\beta} = [ \beta_1, \beta_2, \ldots, \beta_K ]^T\)</span>.</p>
+<p>Este modelo pode ser ajustado usando a função pfr no pacote refund. (Novamente, usamos “milhas por minuto” e “tempo de conclusão” como covariável e resposta)</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(speed) <span class="co"># functional covariate</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> final_time    <span class="co"># scalar response</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>myDat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(X, Y)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">pfr</span>(Y <span class="sc">~</span> <span class="fu">lf</span>(X, <span class="at">k =</span> <span class="dv">10</span>, <span class="at">bs =</span> <span class="st">"cr"</span>), <span class="at">method =</span> <span class="st">"REML"</span>, <span class="at">data =</span> myDat)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>coef <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(coef<span class="sc">$</span>X.argvals, coef<span class="sc">$</span>value) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(V1,V2))<span class="sc">+</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"km"</span>, <span class="at">y=</span><span class="fu">expression</span>(<span class="fu">paste</span>(<span class="fu">beta</span>(t))), <span class="at">title =</span> <span class="st">"função de coeficiente estimado"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>))</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>beta_fn_hat0 <span class="ot">&lt;-</span> beta_fn_hat  <span class="co"># saving beta(t) from fPCA approach</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">pfr</span>(Y <span class="sc">~</span> <span class="fu">lf</span>(X, <span class="at">k =</span> <span class="dv">10</span>, <span class="at">bs =</span> <span class="st">"cr"</span>), <span class="at">method =</span> <span class="st">"REML"</span>, <span class="at">data =</span> myDat)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>coef <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>beta_fn_hat <span class="ot">&lt;-</span> coef<span class="sc">$</span>value</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  ind <span class="ot">&lt;-</span> sel.crv[i]</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  demeaned <span class="ot">&lt;-</span> fpca_res<span class="sc">$</span>Yhat[ind,]<span class="sc">-</span><span class="fu">as.vector</span>(fpca_res<span class="sc">$</span>mu)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">matplot</span>(kms, <span class="fu">t</span>(fpca_res<span class="sc">$</span>Yhat[sel.crv,]<span class="sc">-</span><span class="fu">t</span>(<span class="fu">matrix</span>(<span class="fu">rep</span>(fpca_res<span class="sc">$</span>mu,<span class="dv">3</span>), <span class="at">nrow=</span><span class="dv">10</span>))), </span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">type=</span><span class="st">'l'</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">lty=</span><span class="dv">1</span>, <span class="at">col =</span> <span class="st">'light grey'</span>,</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">xlab=</span><span class="st">"miles"</span>, <span class="at">ylab=</span><span class="st">"speed (demeaned)"</span>, <span class="at">main=</span><span class="st">""</span>)</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(kms, demeaned, <span class="at">type=</span><span class="st">'l'</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">'red'</span>)</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(kms, beta_fn_hat, <span class="at">type=</span><span class="st">'l'</span>, <span class="at">lwd=</span><span class="dv">2</span>,</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab=</span><span class="st">"miles"</span>, <span class="at">ylab =</span> <span class="st">"estimated coefficient fn"</span>, <span class="at">main=</span><span class="st">""</span>)</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(kms, demeaned<span class="sc">*</span>beta_fn_hat,<span class="at">type=</span><span class="st">'l'</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">'blue'</span>,</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab=</span><span class="st">"miles"</span>, <span class="at">ylab =</span> <span class="st">""</span>, <span class="at">main=</span><span class="fu">round</span>(<span class="fu">mean</span>(demeaned<span class="sc">*</span>beta_fn_hat), <span class="dv">2</span>)) </span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>( <span class="fu">rowSums</span>( <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="cf">function</span>(a) (<span class="fu">t</span>(efn) <span class="sc">%*%</span> beta_fn_hat<span class="sc">/</span><span class="dv">10</span>)[a] <span class="sc">*</span> efn[,a]) ) , <span class="at">type=</span><span class="st">'l'</span>, <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">ylab=</span><span class="st">""</span>, <span class="at">xlab=</span><span class="st">"miles"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(kms, beta_fn_hat0, <span class="at">type=</span><span class="st">'l'</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>O comando <code>plot(fit)</code> plota a função de coeficientes estimada com intervalo de confiança ponto a ponto, o que NÃO é útil para inferência! Uma possível maneira de construir um intervalo de confiança conjunto é por meio do método de bootstrap.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>fpca_res <span class="ot">&lt;-</span> <span class="fu">fpca.face</span>(X ,<span class="at">pve =</span> <span class="fl">0.97</span>, <span class="at">argvals =</span> kms, <span class="at">knots =</span> <span class="dv">6</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>Xhat <span class="ot">&lt;-</span> fpca_res<span class="sc">$</span>Yhat</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>Yhat <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit, <span class="at">newdata =</span> <span class="fu">list</span>(<span class="at">X =</span> Xhat))</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># goodness-of-fit</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Y, Yhat, <span class="at">cex=</span><span class="fl">0.5</span>, <span class="at">ylab=</span><span class="st">"Fitted"</span>, <span class="at">xlab=</span><span class="st">"Observed"</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>Rsq <span class="ot">=</span> <span class="dv">1</span><span class="sc">-</span><span class="fu">sum</span>((Y<span class="sc">-</span> <span class="fu">as.vector</span>(Yhat))<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span><span class="fu">sum</span>((Y <span class="sc">-</span> <span class="fu">mean</span>(Y))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>Rsq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9841658</code></pre>
+</div>
+</div>
+<p>A função pfr é flexível para adicionar mais de uma covariável funcional e/ou escalar; por exemplo, <code>pfr(Y ~ X0 + lf(X1) + lf(X2))</code> para ajustar.</p>
+<p><span class="math display">\[
+Y_i = \mu_Y + \beta_0 X_0 + \int X_{1i}(t) \beta_1(t) dt + \int X_{2i}(t) \beta_2(t) dt + \epsilon_i.
+\]</span></p>
+<p>Além disso, também pode ser usado para ajustar regressão funcional não linear,</p>
+<p><span class="math display">\[
+Y_i = \mu_Y + \int F\{X_i(t), t\} dt + \epsilon_i.
+\]</span></p>
+<p>onde <span class="math inline">\(F(\cdot,\cdot)\)</span> é uma função suave bivariada desconhecida;</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fit &lt;- pfr(Y ~ af(X, k = c(10, 8), bs = "cr"))</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">pfr</span>(Y <span class="sc">~</span> <span class="fu">af</span>(X, <span class="at">k =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">8</span>), <span class="at">bs =</span> <span class="st">"cr"</span>))</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>coef <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit<span class="sc">$</span>fitted.values,Y)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="regressão-de-função-em-escalar-fos" class="level2">
+<h2 class="anchored" data-anchor-id="regressão-de-função-em-escalar-fos">3 Regressão de Função em Escalar (FoS)</h2>
+<p>A regressão de função em escalar (FoS) é uma abordagem estatística que lida com a relação entre uma função e uma variável escalar. Nesse tipo de análise, a variável de interesse é uma função contínua ao longo de uma dimensão, como o tempo, enquanto a variável preditora é uma única medida numérica.</p>
+<p>A FoS tem várias aplicações em diferentes campos, como medicina, economia, ecologia e engenharia. Por exemplo, na medicina, pode ser usado para estudar a relação entre o perfil de expressão gênica (função) e uma variável clínica (escalar), como a gravidade de uma doença.</p>
+<p>Uma das principais vantagens da FoS é que ela permite modelar a relação entre a função e a variável escalar de forma flexível, capturando padrões complexos e não lineares. Isso é especialmente útil quando a relação entre as duas variáveis é esperada para variar ao longo da dimensão da função.</p>
+<p>Existem várias abordagens e métodos para realizar a regressão de função em escalar, incluindo o uso de bases funcionais, como splines, wavelets e Fourier, além de técnicas específicas, como regressão de spline penalizada e modelos de mistura.</p>
+<p>Em resumo, a regressão de função em escalar é uma ferramenta poderosa para explorar e modelar a relação entre funções e variáveis escalares, permitindo uma análise mais detalhada e flexível dos dados em várias áreas de estudo.</p>
+<p>Neste estudo, serão utilizados dados meteorológicos do Canadá para fins de análise.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"CanadianWeather"</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Temperature data</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>daily_avg_temp <span class="ot">&lt;-</span> </span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    CanadianWeather<span class="sc">$</span>dailyAv <span class="sc">%&gt;%</span> </span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"Temperature"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co"># temperature plot</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>daily_avg_temp <span class="sc">%&gt;%</span> </span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">day =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">365</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">contains</span>(<span class="st">"Temperature"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(day) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day,value, <span class="at">group =</span> name, <span class="at">color =</span> name)) <span class="sc">+</span> </span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># precipitation data</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>daily_avg_prec <span class="ot">&lt;-</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>      CanadianWeather<span class="sc">$</span>dailyAv <span class="sc">%&gt;%</span> </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>      dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"Precipitation"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>      janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co"># precipitation plot</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>daily_avg_prec <span class="sc">%&gt;%</span> </span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">day =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">365</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">contains</span>(<span class="st">"Precipitation"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(day) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day,value, <span class="at">group =</span> name, <span class="at">color =</span> name)) <span class="sc">+</span> </span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Total avg data </span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>total_avg_prec <span class="ot">&lt;-</span> </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  daily_avg_prec <span class="sc">%&gt;%</span> </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">contains</span>(<span class="st">"Precipitation"</span>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(<span class="fu">fct_inorder</span>(name)) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_mm =</span> <span class="fu">sum</span>(value)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">`</span><span class="at">fct_inorder(name)</span><span class="st">`</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>     <span class="at">name =</span> <span class="fu">str_remove</span>(name,<span class="st">"_precipitation_mm"</span>)</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>   ) </span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Total avg plot </span></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>total_avg_prec <span class="sc">%&gt;%</span> </span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">fct_inorder</span>(name),avg_mm))<span class="sc">+</span></span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust=</span><span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>,<span class="fu">max</span>(total_avg_prec<span class="sc">$</span>avg_mm))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-14-3.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Questão de interesse: Qual é a associação entre a precipitação anual total e a curva de temperatura diária?</p>
+<p>Podemos usar um modelo de regressão de função em escalar para responder a essa pergunta:</p>
+<p><span class="math display">\[
+Temp_i(t) = \beta_0(t) + \beta_1(t) \cdot TotalPreci + \epsilon_i(t)
+\]</span></p>
+<p>Primeiro, definimos nossa variável de resposta e nossa variável preditora.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>day <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">365</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  daily_avg_temp <span class="sc">%&gt;%</span> </span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.matrix</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>()</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  total_avg_prec <span class="sc">%&gt;%</span> </span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>name) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_vector</span>()</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>myDat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">X =</span> X, <span class="at">Y=</span> Y)</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(Y);<span class="fu">length</span>(X)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  35 365</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 35</code></pre>
+</div>
+</div>
+<p>E ajustamos o modelo de regressão de função em escalar usando a função <code>pffr</code>. (A função <code>pffr</code> no pacote refund pode ajustar qualquer modelo linear funcional com resposta funcional.)</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">pffr</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> myDat)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>yhat <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit, <span class="at">newdata =</span> myDat) </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>Rsq_t <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span><span class="fu">colSums</span>((Y <span class="sc">-</span> yhat)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="fu">colSums</span>((Y <span class="sc">-</span> <span class="fu">colMeans</span>(Y))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Rsq_t)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7297034</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>y_pivot <span class="ot">&lt;-</span> Y <span class="sc">%&gt;%</span> </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">day =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">365</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">contains</span>(<span class="st">"_c"</span>), <span class="at">values_to =</span> <span class="st">"true_value"</span>, <span class="at">names_to =</span> <span class="st">"station"</span>)</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>yhat_pivot <span class="ot">&lt;-</span> yhat <span class="sc">%&gt;%</span> </span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">contains</span>(<span class="st">"V"</span>), <span class="at">values_to =</span> <span class="st">"fitted"</span>, <span class="at">names_to =</span> <span class="st">"station_fitted"</span>)</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(y_pivot, yhat_pivot) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(day) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(day, true_value, <span class="at">group =</span> station))<span class="sc">+</span></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"gray"</span>)<span class="sc">+</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(day, fitted, <span class="at">group =</span> station_fitted, <span class="at">color =</span> station_fitted))<span class="sc">+</span></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A função de coeficientes estimados é:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>coef <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>using seWithMean for  s(yindex.vec) .</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>beta0.hat <span class="ot">&lt;-</span> coef<span class="sc">$</span>smterms<span class="sc">$</span><span class="st">`</span><span class="at">Intercept(yindex)</span><span class="st">`</span><span class="sc">$</span>coef</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>beta1.hat <span class="ot">&lt;-</span> coef<span class="sc">$</span>smterms<span class="sc">$</span><span class="st">`</span><span class="at">X(yindex)</span><span class="st">`</span><span class="sc">$</span>coef</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">index =</span> beta0.hat<span class="sc">$</span>yindex.vec, <span class="at">value =</span> beta0.hat<span class="sc">$</span>value) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(index,value))<span class="sc">+</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"day"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(beta[<span class="dv">0</span>](t))), <span class="at">title =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">index =</span> beta1.hat<span class="sc">$</span>yindex.vec, <span class="at">value =</span> beta1.hat<span class="sc">$</span>value)<span class="sc">%&gt;%</span> </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(index,value))<span class="sc">+</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"day"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(beta[<span class="dv">1</span>](t))), <span class="at">title =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-18-2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Outras funções que podem ajustar regressão de função em escalar são bayes_fosr e fosr no pacote refund e fRegress no pacote fda. Note que a seleção dos parâmetros de suavização não está implementada na função fRegress. Enquanto isso, fosr pode receber tanto uma matriz como um objeto fd do pacote fda, além de poder selecionar parâmetros de suavização ótimos usando diversos métodos, como <code>GCV</code>, <code>REML</code>, <code>ML</code>, entre outros (<code>?fosr</code>).</p>
+<p><code>bayes_fosr</code> utiliza estimação Bayesiana e <code>plot_shiny</code> recebe a saída de <code>bayes_fosr</code> para plotagens interativas.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fit &lt;- bayes_fosr(Y ~ X)</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plot_shiny(fit)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Isso retorna cinco abas com gráficos interativos:</p>
+<p>Aba 1: Dados Observados (resposta observada colorida com base na covariável selecionada pelo usuário.)</p>
+<ol type="1">
+<li><p>Aba 2: Valores Ajustados (curvas previstas com diferentes valores da covariável)</p></li>
+<li><p>Aba 3: Funções de Coeficientes (funções de coeficientes estimadas)</p></li>
+<li><p>Aba 4: Resíduos (curvas de resíduos coloridas com base em sua profundidade)</p></li>
+</ol>
+<p>(Atividade em grupo) Explore os gráficos interativos.</p>
+</section>
+<section id="regressão-de-função-em-função-fof---modelo-concorrente" class="level2">
+<h2 class="anchored" data-anchor-id="regressão-de-função-em-função-fof---modelo-concorrente">4 Regressão de função em função (FoF) - Modelo Concorrente</h2>
+<p>A regressão de função em função (FoF) é uma abordagem estatística que permite modelar a relação entre duas funções contínuas ao longo de uma dimensão comum. No contexto do modelo concorrente, a FoF é usada para investigar a relação entre uma função resposta e uma função preditora, ambas observadas na mesma dimensão temporal.</p>
+<p>No modelo concorrente, a função resposta é modelada como uma combinação linear das funções preditoras, ponderadas por coeficientes de regressão desconhecidos. Esses coeficientes indicam como a função resposta é influenciada pelas diferentes características da função preditora.</p>
+<p>Para ajustar o modelo FoF concorrente, são utilizadas técnicas estatísticas como mínimos quadrados parciais ou máxima verossimilhança. O objetivo é estimar os coeficientes de regressão para descrever a relação entre as funções resposta e preditora.</p>
+<p>O modelo FoF concorrente pode ser aplicado em várias áreas, como ciências ambientais, medicina, economia e engenharia, onde existem dados funcionais coletados ao longo do tempo. Ele fornece uma abordagem flexível para modelar a complexa relação funcional entre duas variáveis observadas em uma dimensão comum.</p>
+<p>O modelo de regressão funcional concorrente</p>
+<p><span class="math display">\[
+Temp_i(t) = \beta_0(t) + \beta_1(t) \cdot Preci(t) + \epsilon_i(t)
+\]</span></p>
+<p>relaciona a temperatura média diária no ponto de tempo atual t com a precipitação média diária no mesmo ponto de tempo t.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"CanadianWeather"</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>day <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">365</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># selecionando os dados de temperatura de todas as estações - 365 dias</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">as.matrix</span>(CanadianWeather<span class="sc">$</span>dailyAv[,,<span class="dv">1</span>]))</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="co"># criando Fpca com os dados de precipitação</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">fpca.sc</span>(<span class="fu">t</span>(<span class="fu">as.matrix</span>(CanadianWeather<span class="sc">$</span>dailyAv[,,<span class="dv">2</span>])), <span class="at">pve=</span><span class="fl">0.99</span>)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="co">#selecionando os dados ajustados criados pela Fpca</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> fit<span class="sc">$</span>Yhat </span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>myDat <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>myDat<span class="sc">$</span>X <span class="ot">&lt;-</span> X</span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>myDat<span class="sc">$</span>Y <span class="ot">&lt;-</span> Y</span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um modelo de regressão usando pffr function</span></span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">pffr</span>(Y <span class="sc">~</span> X, <span class="at">data =</span> myDat)</span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a>yhat <span class="ot">&lt;-</span> <span class="fu">predict</span>(fit, <span class="at">newdata =</span> myDat)</span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>Rsq_t <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span><span class="fu">colSums</span>((Y <span class="sc">-</span> yhat)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="fu">colSums</span>((Y <span class="sc">-</span> <span class="fu">colMeans</span>(Y))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Rsq_t) <span class="co"># erro médio quadratico</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7018062</code></pre>
+</div>
+</div>
+<p>Este modelo explica cerca de 77% da variabilidade total. As funções de coeficiente estimadas são:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>coef <span class="ot">&lt;-</span> <span class="fu">coef</span>(fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>using seWithMean for  s(yindex.vec) .</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>beta0.hat <span class="ot">&lt;-</span> coef<span class="sc">$</span>smterms<span class="sc">$</span><span class="st">`</span><span class="at">Intercept(yindex)</span><span class="st">`</span><span class="sc">$</span>coef</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>beta1.hat <span class="ot">&lt;-</span> coef<span class="sc">$</span>smterms<span class="sc">$</span><span class="st">`</span><span class="at">X(yindex)</span><span class="st">`</span><span class="sc">$</span>coef</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">index =</span> beta0.hat<span class="sc">$</span>yindex.vec, <span class="at">value =</span> beta0.hat<span class="sc">$</span>value) <span class="sc">%&gt;%</span> </span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(index,value))<span class="sc">+</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"day"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(beta[<span class="dv">0</span>](t))), <span class="at">title =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(<span class="at">index =</span> beta1.hat<span class="sc">$</span>yindex.vec, <span class="at">value =</span> beta1.hat<span class="sc">$</span>value)<span class="sc">%&gt;%</span> </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(index,value))<span class="sc">+</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"day"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">paste</span>(beta[<span class="dv">1</span>](t))), <span class="at">title =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia04_files/figure-html/unnamed-chunk-21-2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A função <code>fRegress</code> no pacote fda também ajusta a regressão funcional concorrente, mas a seleção dos parâmetros de suavização não está implementada na função.</p>
+<p>Resumo: - Regressão escalar em função - Dados de maratona - Gráficos interativos (plot_shiny) - Regressão de função em escalar e regressão de função em função - Dados meteorológicos do Canadá - Precipitação média como covariável escalar - Precipitação e temperatura como função de localização</p>
+<p>Atividades em grupo e individuais: - Analise os dados de DTI usando os modelos de regressão que aprendemos hoje. - Qual é a associação entre os perfis de FA e as pontuações de PASAT de pacientes com esclerose múltipla em sua primeira visita? (regressão escalar em função) - O conjunto de dados também inclui rcst - perfis de FA coletados do trato corticospinal direito. Como essas medidas se relacionam com as medidas de FA ao longo de CCA? - Ajuste um modelo linear funcional com FA ao longo de CCA como resposta e pontuações de PASAT como covariável; experimente diferentes funções R. Discuta os gráficos interativos dos resultados da regressão de função em escalar.</p>
+<p>Vamos usar o conjunto de dados DTI para ilustrar dados funcionais observados longitudinalmente amanhã. Tente plotar vários perfis observados de um paciente com EM selecionado aleatoriamente. (Atividade individual)</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

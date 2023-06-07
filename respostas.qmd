@@ -1,0 +1,11 @@
+---
+title: "Respostas"
+---
+
+```{r, echo=FALSE}
+
+knitr::opts_chunk$set(fig.align = 'center', out.width="100%", fig.retina = 2)
+
+pacman::p_load(tidyverse, lme4, mgcv, refund, face, fda, rgl, fields, refund.shiny, janitor)
+
+```

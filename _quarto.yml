@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: ""
+  navbar:
+    left:
+      - href: index.qmd
+      - dia01.qmd  
+      - dia02.qmd
+      - dia03.qmd
+      - dia04.qmd
+      - dia05.qmd
+      - respostas.qmd
+
+format:
+  html:
+    theme: superhero
+    css: styles.css
+    toc: true
+
+editor: visual
+

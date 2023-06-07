@@ -1,0 +1,14 @@
+{
+  "hash": "5d2b7d7033435dcc63c1dbc5cf5c6b56",
+  "result": {
+    "markdown": "---\ntitle: \"Respostas\"\n---\n\n::: {.cell}\n\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
