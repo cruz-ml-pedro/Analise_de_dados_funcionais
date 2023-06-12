@@ -10,7 +10,7 @@ pacman::p_load(tidyverse, lme4, mgcv, refund, face, fda, rgl, fields, refund.shi
 
 ```
 
-# Modelos lineares funcionais {secao-4}
+# Modelos lineares funcionais {#secao-4}
 
 Os modelos lineares funcionais são uma classe de modelos estatísticos que lidam com dados funcionais, ou seja, observações que são representadas como funções contínuas ao invés de valores numéricos isolados. Esses modelos são amplamente utilizados para análise de dados funcionais em várias áreas, como biologia, economia, engenharia e ciências da saúde.
 
@@ -90,7 +90,7 @@ mutate_seconds <- function(x){
  
  
 marathon_df %>% 
-  dplyr::slice(1:50) %>% 
+  dplyr::slice(1:105) %>% 
   pivot_longer(cols = 15:24) %>% 
   mutate(
     name = as.numeric(name)

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Respostas</title>
+<title></title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,8 +17,42 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -59,6 +93,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -69,41 +105,43 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Introdução à Análise de Dados Funcionais</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dia01.html">
+    <a class="nav-link" href="./dia01.html" rel="" target="">
  <span class="menu-text">Dia-01</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dia02.html">
+    <a class="nav-link" href="./dia02.html" rel="" target="">
  <span class="menu-text">Dia-02</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dia03.html">
+    <a class="nav-link" href="./dia03.html" rel="" target="">
  <span class="menu-text">Dia-03</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dia04.html">
+    <a class="nav-link" href="./dia04.html" rel="" target="">
  <span class="menu-text">Dia-04</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dia05.html">
+    <a class="nav-link" href="./dia05.html" rel="" target="">
  <span class="menu-text">Dia-05</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./respostas.html" aria-current="page">
- <span class="menu-text">Respostas</span></a>
+    <a class="nav-link active" href="./respostas.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Resposta dos exercícios propostos</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -113,33 +151,577 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#secao-6" id="toc-secao-6" class="nav-link active" data-scroll-target="#secao-6">Resposta dos exercícios propostos</a>
+  <ul class="collapse">
+  <li><a href="#dia-01" id="toc-dia-01" class="nav-link" data-scroll-target="#dia-01">Dia 01</a>
+  <ul class="collapse">
+  <li><a href="#exercicio-1.1" id="toc-exercicio-1.1" class="nav-link" data-scroll-target="#exercicio-1.1">Exercício 1.1</a></li>
+  <li><a href="#exercicio-1.2" id="toc-exercicio-1.2" class="nav-link" data-scroll-target="#exercicio-1.2">Exercício 1.2</a></li>
+  <li><a href="#exercicio-1.3" id="toc-exercicio-1.3" class="nav-link" data-scroll-target="#exercicio-1.3">Exercício 1.3</a></li>
+  <li><a href="#exercicio-1.4" id="toc-exercicio-1.4" class="nav-link" data-scroll-target="#exercicio-1.4">Exercício 1.4</a></li>
+  <li><a href="#exercicio-1.5" id="toc-exercicio-1.5" class="nav-link" data-scroll-target="#exercicio-1.5">Exercício 1.5</a></li>
+  <li><a href="#exercicio-1.6" id="toc-exercicio-1.6" class="nav-link" data-scroll-target="#exercicio-1.6">Exercício 1.6</a></li>
+  <li><a href="#exercicio-1.7" id="toc-exercicio-1.7" class="nav-link" data-scroll-target="#exercicio-1.7">Exercício 1.7</a></li>
+  <li><a href="#exercicio-1.8" id="toc-exercicio-1.8" class="nav-link" data-scroll-target="#exercicio-1.8">Exercício 1.8</a></li>
+  <li><a href="#exercicio-1.9" id="toc-exercicio-1.9" class="nav-link" data-scroll-target="#exercicio-1.9">Exercício 1.9</a></li>
+  <li><a href="#exercício-1.10" id="toc-exercício-1.10" class="nav-link" data-scroll-target="#exercício-1.10">Exercício 1.10</a></li>
+  <li><a href="#exercício-1.11" id="toc-exercício-1.11" class="nav-link" data-scroll-target="#exercício-1.11">Exercício 1.11</a></li>
+  <li><a href="#exercício-1.12" id="toc-exercício-1.12" class="nav-link" data-scroll-target="#exercício-1.12">Exercício 1.12</a></li>
+  <li><a href="#exercício-1.13" id="toc-exercício-1.13" class="nav-link" data-scroll-target="#exercício-1.13">Exercício 1.13</a></li>
+  <li><a href="#exercício-1.14" id="toc-exercício-1.14" class="nav-link" data-scroll-target="#exercício-1.14">Exercício 1.14</a></li>
+  <li><a href="#exercício-1.15" id="toc-exercício-1.15" class="nav-link" data-scroll-target="#exercício-1.15">Exercício 1.15</a></li>
+  <li><a href="#exercício-1.16" id="toc-exercício-1.16" class="nav-link" data-scroll-target="#exercício-1.16">Exercício 1.16</a></li>
+  <li><a href="#exercício-1.17" id="toc-exercício-1.17" class="nav-link" data-scroll-target="#exercício-1.17">Exercício 1.17</a></li>
+  <li><a href="#exercício-1.18" id="toc-exercício-1.18" class="nav-link" data-scroll-target="#exercício-1.18">Exercício 1.18</a></li>
+  <li><a href="#exercício-1.19" id="toc-exercício-1.19" class="nav-link" data-scroll-target="#exercício-1.19">Exercício 1.19</a></li>
+  </ul></li>
+  <li><a href="#dia-02" id="toc-dia-02" class="nav-link" data-scroll-target="#dia-02">Dia 02</a>
+  <ul class="collapse">
+  <li><a href="#exercício-2.1" id="toc-exercício-2.1" class="nav-link" data-scroll-target="#exercício-2.1">Exercício 2.1</a></li>
+  <li><a href="#exercício-2.2" id="toc-exercício-2.2" class="nav-link" data-scroll-target="#exercício-2.2">Exercício 2.2</a></li>
+  <li><a href="#exercício-2.3" id="toc-exercício-2.3" class="nav-link" data-scroll-target="#exercício-2.3">Exercício 2.3</a></li>
+  <li><a href="#exercício-2.4" id="toc-exercício-2.4" class="nav-link" data-scroll-target="#exercício-2.4">Exercício 2.4</a></li>
+  <li><a href="#exercício-2.5" id="toc-exercício-2.5" class="nav-link" data-scroll-target="#exercício-2.5">Exercício 2.5</a></li>
+  <li><a href="#exercício-2.6" id="toc-exercício-2.6" class="nav-link" data-scroll-target="#exercício-2.6">Exercício 2.6</a></li>
+  <li><a href="#exercício-2.7" id="toc-exercício-2.7" class="nav-link" data-scroll-target="#exercício-2.7">Exercício 2.7</a></li>
+  <li><a href="#exercício-2.8" id="toc-exercício-2.8" class="nav-link" data-scroll-target="#exercício-2.8">Exercício 2.8</a></li>
+  <li><a href="#exercício-2.9" id="toc-exercício-2.9" class="nav-link" data-scroll-target="#exercício-2.9">Exercício 2.9</a></li>
+  </ul></li>
+  <li><a href="#dia-03" id="toc-dia-03" class="nav-link" data-scroll-target="#dia-03">Dia 03</a>
+  <ul class="collapse">
+  <li><a href="#exercício-3.1" id="toc-exercício-3.1" class="nav-link" data-scroll-target="#exercício-3.1">Exercício 3.1</a></li>
+  <li><a href="#exercício-3.2" id="toc-exercício-3.2" class="nav-link" data-scroll-target="#exercício-3.2">Exercício 3.2</a></li>
+  <li><a href="#exercício-3.3" id="toc-exercício-3.3" class="nav-link" data-scroll-target="#exercício-3.3">Exercício 3.3</a></li>
+  <li><a href="#exercício-3.4" id="toc-exercício-3.4" class="nav-link" data-scroll-target="#exercício-3.4">Exercício 3.4</a></li>
+  <li><a href="#exercício-3.5" id="toc-exercício-3.5" class="nav-link" data-scroll-target="#exercício-3.5">Exercício 3.5</a></li>
+  <li><a href="#exercício-3.6" id="toc-exercício-3.6" class="nav-link" data-scroll-target="#exercício-3.6">Exercício 3.6</a></li>
+  <li><a href="#exercício-3.7" id="toc-exercício-3.7" class="nav-link" data-scroll-target="#exercício-3.7">Exercício 3.7</a></li>
+  <li><a href="#exercício-3.8" id="toc-exercício-3.8" class="nav-link" data-scroll-target="#exercício-3.8">Exercício 3.8</a></li>
+  <li><a href="#exercício-3.9" id="toc-exercício-3.9" class="nav-link" data-scroll-target="#exercício-3.9">Exercício 3.9</a></li>
+  <li><a href="#exercício-3.10" id="toc-exercício-3.10" class="nav-link" data-scroll-target="#exercício-3.10">Exercício 3.10</a></li>
+  </ul></li>
+  <li><a href="#dia-04" id="toc-dia-04" class="nav-link" data-scroll-target="#dia-04">Dia 04</a>
+  <ul class="collapse">
+  <li><a href="#exercício-4.1" id="toc-exercício-4.1" class="nav-link" data-scroll-target="#exercício-4.1">Exercício 4.1</a></li>
+  <li><a href="#exercício-4.2" id="toc-exercício-4.2" class="nav-link" data-scroll-target="#exercício-4.2">Exercício 4.2</a></li>
+  <li><a href="#exercício-4.3" id="toc-exercício-4.3" class="nav-link" data-scroll-target="#exercício-4.3">Exercício 4.3</a></li>
+  <li><a href="#exercício-4.4" id="toc-exercício-4.4" class="nav-link" data-scroll-target="#exercício-4.4">Exercício 4.4</a></li>
+  <li><a href="#exercício-4.5" id="toc-exercício-4.5" class="nav-link" data-scroll-target="#exercício-4.5">Exercício 4.5</a></li>
+  <li><a href="#exercício-4.6" id="toc-exercício-4.6" class="nav-link" data-scroll-target="#exercício-4.6">Exercício 4.6</a></li>
+  <li><a href="#exercício-4.7" id="toc-exercício-4.7" class="nav-link" data-scroll-target="#exercício-4.7">Exercício 4.7</a></li>
+  </ul></li>
+  <li><a href="#dia-05" id="toc-dia-05" class="nav-link" data-scroll-target="#dia-05">Dia 05</a>
+  <ul class="collapse">
+  <li><a href="#exercício-5.1" id="toc-exercício-5.1" class="nav-link" data-scroll-target="#exercício-5.1">Exercício 5.1</a></li>
+  <li><a href="#exercício-5.2" id="toc-exercício-5.2" class="nav-link" data-scroll-target="#exercício-5.2">Exercício 5.2</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Respostas</h1>
+
+
+<section id="secao-6" class="level1">
+<h1>Resposta dos exercícios propostos</h1>
+<section id="dia-01" class="level2">
+<h2 class="anchored" data-anchor-id="dia-01">Dia 01</h2>
+<section id="exercicio-1.1" class="level3">
+<h3 class="anchored" data-anchor-id="exercicio-1.1">Exercício 1.1</h3>
+<p><em>Como variam as medidas de AF ao longo da CCA em indivíduos com esclerose múltipla?</em></p>
+<p>R: Apesar do grande “range” de valores de AF, a grande maioria das curvas pode ser bem representada pelo formato obtido com a média de todas as curvas (figura abaixo). Contudo principalmente na parte central da imagem podemos notar que o comportamento é muito mais errático. Essas variações nos valores de AF para o diferentes indivíduos podem estár associadas a diferentes localizações, extensão e gravidade da desmielinização do corpo caloso (CCA).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="respostas_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<div class="cell">
-
 </div>
+</div>
+</section>
+<section id="exercicio-1.2" class="level3">
+<h3 class="anchored" data-anchor-id="exercicio-1.2">Exercício 1.2</h3>
+<p><em>Qual é a associação entre as medidas de anisotropia fracionada (fractional anisotropy, FA) e as funções cognitivas (pontuações do teste PASAT)?</em></p>
+<p>Éssa é uma pergunta que pode ser respondida de modo mais efetivo ao utilizarmos as técnicas que serão apresentadas mais adiante no curso. Contudo, vamos fazer uma primeira abordagem visual.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="respostas_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Através da figura acima podemos notar que notas mais baixas de PASAT estão relacionadas a valores mais baixos de AF, principalemnte na parce central do corpo caloso.</p>
+</section>
+<section id="exercicio-1.3" class="level3">
+<h3 class="anchored" data-anchor-id="exercicio-1.3">Exercício 1.3</h3>
+<p><em>O perfil típico de anisotropia fracionada (fractional anisotropy, FA) varia entre pacientes com esclerose múltipla e indivíduos saudáveis?</em></p>
+<p>Para responder essa questão vamos dar uma olhada nos perfis dos pacientes com EM e nos pacientes saudáveis</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="respostas_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Através da comparação dos gráficos é fácil notar que apesar de apresentarem m comportamento médio pareceido (formato da curva), os valores de AF dos pacientes com EM são mais baixos (gráfico da esquerda) do que os pacientes saudáveis (gráfico da direita).</p>
+<p>Conforme indicado na questão anterior, existe uma aparente correlação entre as notas de PASAT e os valores de AF. O que nos daria um bom modo de testar, mesmo que de modo indireto, se a diferença entre os valores de de AF para pacientes com e sem EM é significativa. Entretanto, infelizmente o conjunto de dados não apresenta as notas de PASAT para pacientes saudáveis. Assim sendo vamos utilizar os valores médios de AF para cada paciente.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>DTI4 <span class="ot">&lt;-</span> DTI <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(visit <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#vamos dar uma olhada se as classes estão balanceadas</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>freq_relativa <span class="ot">&lt;-</span> DTI4 <span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(sex, case) <span class="sc">%&gt;%</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">freq_rel =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(freq_relativa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     sex case  n   freq_rel
+1   male    0 30 0.21126761
+2   male    1 66 0.46478873
+3 female    0 12 0.08450704
+4 female    1 34 0.23943662</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>freq_relativa <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> freq_rel, <span class="at">fill =</span> <span class="fu">as.factor</span>(case))) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Sex"</span>, <span class="at">y =</span> <span class="st">"Proportion"</span>, <span class="at">fill =</span> <span class="st">"Case"</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="respostas_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Essas classes parecem um pouco desbalanceadas, vamos tentar melhorar isso.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Contagem das classes</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>contagem_classes <span class="ot">&lt;-</span> DTI4 <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(case,sex)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Identificar a classe majoritária e a classe minoritária</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>classe_majoritaria <span class="ot">&lt;-</span> contagem_classes <span class="sc">%&gt;%</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n <span class="sc">==</span> <span class="fu">max</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(case)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>classe_minoritaria <span class="ot">&lt;-</span> contagem_classes <span class="sc">%&gt;%</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n <span class="sc">==</span> <span class="fu">min</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(case)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Subamostragem da classe majoritária para igualar o número de observações</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>dados_balanceados <span class="ot">&lt;-</span> DTI4 <span class="sc">%&gt;%</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex) <span class="sc">%&gt;%</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="at">size =</span> <span class="fu">max</span>(contagem_classes<span class="sc">$</span>n), <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificar a contagem das classes nos dados balanceados</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>contagem_classes_balanceadas <span class="ot">&lt;-</span> dados_balanceados <span class="sc">%&gt;%</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(sex, case)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(contagem_classes_balanceadas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  sex     case     n
+  &lt;fct&gt;  &lt;dbl&gt; &lt;int&gt;
+1 male       0    18
+2 male       1    48
+3 female     0    23
+4 female     1    43</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>freq_relativa2 <span class="ot">&lt;-</span> contagem_classes_balanceadas <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(sex, case) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">freq_rel =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>freq_relativa2 <span class="sc">%&gt;%</span> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> sex, <span class="at">y =</span> freq_rel, <span class="at">fill =</span> <span class="fu">as.factor</span>(case))) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>()) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Sex"</span>, <span class="at">y =</span> <span class="st">"Proportion"</span>, <span class="at">fill =</span> <span class="st">"Case"</span>) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="respostas_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Neste caso os grupos que queremos testar são independentes, ou você tem ou você não EM… Assim, o teste que me vem a mente para testar esa diferença entre os grupos é o teste t.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(RVAideMemoire, car)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Obitendo os valores médios para cada ID</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>df_teste<span class="ot">&lt;-</span> dados_balanceados <span class="sc">%&gt;%</span> </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_cca =</span> <span class="fu">rowMeans</span>(dados_balanceados<span class="sc">$</span>cca, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">case =</span> <span class="fu">as_factor</span>(case)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>(ID,case,sex,mean_cca) </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#glimpse(df_teste)</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificando a normalidade dos dados</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">byf.shapiro</span>(mean_cca <span class="sc">~</span> case, df_teste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality tests
+
+data:  mean_cca by case 
+
+       W p-value
+0 0.9771  0.5683
+1 0.9896  0.6958</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">byf.shapiro</span>(mean_cca <span class="sc">~</span> sex, df_teste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality tests
+
+data:  mean_cca by sex 
+
+            W p-value
+male   0.9896  0.8585
+female 0.9760  0.2277</code></pre>
+</div>
+</div>
+<p>Não encontramos evidencias para rejeitar as hipoteses nulas <span class="math inline">\(H_0\)</span>: distribuição dos dados = normal <span class="math inline">\(p &gt; 0.05\)</span>.</p>
+<p>Vamos verificar a homogeneidade de variâncias</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(mean_cca <span class="sc">~</span> case, df_teste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Levene's Test for Homogeneity of Variance (center = median)
+       Df F value   Pr(&gt;F)   
+group   1  8.3346 0.004557 **
+      130                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(mean_cca <span class="sc">~</span> sex, df_teste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Levene's Test for Homogeneity of Variance (center = median)
+       Df F value Pr(&gt;F)
+group   1  0.0359   0.85
+      130               </code></pre>
+</div>
+</div>
+<p><span class="math inline">\(H_0\)</span>: as variâncias dos grupos são homogêneas. Vamos seguir com o teste t</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(mean_cca <span class="sc">~</span> case, df_teste, <span class="at">var.equal=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two Sample t-test
+
+data:  mean_cca by case
+t = 6.7243, df = 130, p-value = 5.051e-10
+alternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0
+95 percent confidence interval:
+ 0.03829808 0.07022817
+sample estimates:
+mean in group 0 mean in group 1 
+      0.5504240       0.4961609 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(mean_cca <span class="sc">~</span> sex, df_teste, <span class="at">var.equal=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two Sample t-test
+
+data:  mean_cca by sex
+t = 0.46751, df = 130, p-value = 0.6409
+alternative hypothesis: true difference in means between group male and group female is not equal to 0
+95 percent confidence interval:
+ -0.01308899  0.02118927
+sample estimates:
+  mean in group male mean in group female 
+           0.5150404            0.5109903 </code></pre>
+</div>
+</div>
+<p>Assim, temos indícios para acreditar que existe diferença entre as pessos que tem e que não tem EM (rejeitamos a hipótese nula) e não existe diferença entre os gêneros (não rejeitamos a hipótese nula).</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>p1<span class="ot">&lt;-</span> df_teste <span class="sc">%&gt;%</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(case), <span class="at">y =</span> mean_cca)) <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Case"</span>) <span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Mean CCA"</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>p2<span class="ot">&lt;-</span> df_teste <span class="sc">%&gt;%</span> </span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(sex), <span class="at">y =</span> mean_cca)) <span class="sc">+</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"sex"</span>) <span class="sc">+</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Mean CCA"</span>)</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>plot_combinado2 <span class="ot">&lt;-</span> p1 <span class="sc">+</span> p2 <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">1</span>)</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot_combinado2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="respostas_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Os perfís variam sim entre individuos com e sem EM, e não variam entre pacientes de gênero distintos.</p>
+</section>
+<section id="exercicio-1.4" class="level3">
+<h3 class="anchored" data-anchor-id="exercicio-1.4">Exercício 1.4</h3>
+<p><em>Descreva as principais características dos perfis diários de temperatura.</em></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="respostas_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Todas as curvas tem um comportamento muito parecido, com um aparente comportamento ciclico (só temos um ano no gráfico) inverno-verão. Contudo apresentam um range de temperaturas dependendo da localidade da estação. Localidades mais quentes apresentam em média, durante o inverno valores um pouco abaixo de zero e um pouco maiores que 20° no verão. Equanto localidades mais frias apresentam valores inferiores a -30° no inversno e ~5°/10° graus no verão.</p>
+</section>
+<section id="exercicio-1.5" class="level3">
+<h3 class="anchored" data-anchor-id="exercicio-1.5">Exercício 1.5</h3>
+<p><em>Qual é a associação entre a precipitação média anual e a temperatura diária em todo o Canadá?</em></p>
+<p>Um bom modo de responder essa questão sería através da utilização da técnica de regressão de escalar em função (SoF/prf) que ainda não vimos. Em breve voltaremos a essa questão.</p>
+</section>
+<section id="exercicio-1.6" class="level3">
+<h3 class="anchored" data-anchor-id="exercicio-1.6">Exercício 1.6</h3>
+<p><em>E quanto à associação entre as precipitações diárias e os perfis de temperatura?</em></p>
+<p>Assim como na questão anterior essa questão demanda uma técnica que ainda não foi apresentada, nesse caso Regressão de componentes principais funcionais (FPC) e Função em função - FoF (pffr).</p>
+</section>
+<section id="exercicio-1.7" class="level3">
+<h3 class="anchored" data-anchor-id="exercicio-1.7">Exercício 1.7</h3>
+<p><em>Como as contagens de CD4 variam ao longo do tempo na população, bem como no nível individual?</em></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="respostas_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Essa pergunta busca compreender como as contagens de células CD4 mudam ao longo do tempo em indivíduos com HIV em tratamento. As contagens de CD4 são um indicador-chave da saúde imunológica das pessoas infectadas pelo HIV, e monitorar essas contagens ao longo do tempo pode fornecer informações valiosas sobre a progressão da doença e a eficácia do tratamento.</p>
+<p>Em geral os dados apresentam um comportamento muito menos errático após o mes 0. Contudo, em nível individual o comportamento possui um range de valores bem grande.</p>
+</section>
+<section id="exercicio-1.8" class="level3">
+<h3 class="anchored" data-anchor-id="exercicio-1.8">Exercício 1.8</h3>
+<p><em>Descreva as principais direções nas quais as contagens de CD4 variam.</em></p>
+<p>Não entendi bem essa pergunta…</p>
+<p>Os dados apresentam comportamento muito diferentes entre os indivíduos.</p>
+</section>
+<section id="exercicio-1.9" class="level3">
+<h3 class="anchored" data-anchor-id="exercicio-1.9">Exercício 1.9</h3>
+<p><em>Descreva os gráficos - como a estratégia de corrida difere entre os corredores?</em></p>
+<p>criar os gráficos e colocar um link para eles</p>
+</section>
+<section id="exercício-1.10" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-1.10">Exercício 1.10</h3>
+<p><em>Como a velocidade varia ao longo de um percurso de uma maratona?</em></p>
+</section>
+<section id="exercício-1.11" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-1.11">Exercício 1.11</h3>
+<p><em>Qual é a relação entre o comportamento da velocidade durante a maratona e o tempo de chegada?</em></p>
+</section>
+<section id="exercício-1.12" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-1.12">Exercício 1.12</h3>
+<p><em>Qual é a melhor estratégia para terminar a maratona entre os cinco primeiros colocados?</em></p>
+</section>
+<section id="exercício-1.13" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-1.13">Exercício 1.13</h3>
+<p><em>Descreva a variação do poluente em todo os Estados Unidos.</em> (ainda não tem um dados para substituir)</p>
+</section>
+<section id="exercício-1.14" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-1.14">Exercício 1.14</h3>
+<p><em>Descreva os principais modos de variação.</em> (ainda não tem um dados para substituir)</p>
+</section>
+<section id="exercício-1.15" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-1.15">Exercício 1.15</h3>
+<p><em>Como a altura varia em meninos e meninas?</em></p>
+</section>
+<section id="exercício-1.16" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-1.16">Exercício 1.16</h3>
+<p><em>O gênero tem impacto no processo de crescimento de uma criança?</em></p>
+</section>
+<section id="exercício-1.17" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-1.17">Exercício 1.17</h3>
+<p><em>Plote a taxa de crescimento de meninos e meninas e descreva-a.</em></p>
+</section>
+<section id="exercício-1.18" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-1.18">Exercício 1.18</h3>
+<p><em>Explore os dados das curvas de crescimento de Berkeley</em></p>
+<ul>
+<li>Plote/descreva a função média.</li>
+<li>Plote/descreva a função de covariância.</li>
+<li>As funções média e de covariância diferem entre mulheres e homens?</li>
+</ul>
+</section>
+<section id="exercício-1.19" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-1.19">Exercício 1.19</h3>
+<p><em>Reproduza os gráficos para os conjuntos de dados discutidos na terceira página.</em> (Maratona,poluição,crescimento)</p>
+</section>
+</section>
+<section id="dia-02" class="level2">
+<h2 class="anchored" data-anchor-id="dia-02">Dia 02</h2>
+<section id="exercício-2.1" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-2.1">Exercício 2.1</h3>
+<p><em>Tente executar o código acima várias vezes. Experimente também executar o código com diferentes números de funções de base, por exemplo, nb &lt;- 5, nb &lt;- 15, nb &lt;- 30.</em> (colocar o link para a pagina onde tem o código mncionado)</p>
+</section>
+<section id="exercício-2.2" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-2.2">Exercício 2.2</h3>
+<p><em>Agora tente executar o código com nbasis = 13, nbasis = 27 e nbasis = 365. Qual é o efeito de usar diferentes números de bases?</em> (colocar o link onde tem o código mencionado)</p>
+</section>
+<section id="exercício-2.3" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-2.3">Exercício 2.3</h3>
+<p><em>Tente este exercício com as medidas feitas em Quebec (l = 10). Você ainda escolhe K = 13 como o número ótimo de funções de base? E em relação a outras localidades?</em> (colocar o link para a pagina onde está o código refetrente a pergunta)</p>
+</section>
+<section id="exercício-2.4" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-2.4">Exercício 2.4</h3>
+<p><em>Experimente diferentes valores de λ (λ = 0.0001, λ = 100 e λ = 108) e discuta os resultados!</em> (colocar o link do código)</p>
+</section>
+<section id="exercício-2.5" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-2.5">Exercício 2.5</h3>
+<p><em>Existem várias maneiras de selecionar o λ ótimo; por exemplo, validação cruzada</em></p>
+<p>(colocar o link para a pagina onde tem a compração entre cross-validation e generalized cross-validation)</p>
+</section>
+<section id="exercício-2.6" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-2.6">Exercício 2.6</h3>
+<p><em>Explorar as funcções do do pacote <code>mgcv</code></em></p>
+<p><em>Função ksmooth (alisador de regressão de kernel) Exemplo (atividade para fazer em casa): experimente um kernel gaussiano (“normal”) e diferentes larguras de banda (0.1, 10, 30).</em></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#fit = gam(y ~ s(t.day, k = 30, bs = "cr"), method = 'REML')</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># fit = ksmooth(t.day, y, kernel = c("box"), bandwidth = 10)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercício-2.7" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-2.7">Exercício 2.7</h3>
+<p><em>Página 2: Experimente diferentes números de funções de base e ajuste OLS (atividade em grupo).</em></p>
+</section>
+<section id="exercício-2.8" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-2.8">Exercício 2.8</h3>
+<p><em>Página 3: Exercício de validação cruzada com medidas de precipitação transformadas em logaritmo feitas em Quebec.</em></p>
+</section>
+<section id="exercício-2.9" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-2.9">Exercício 2.9</h3>
+<p><em>Página 4: Experimente as funções gam e ksmooth; especialmente a função gam, pois a usaremos nos próximos capítulos!</em></p>
+</section>
+</section>
+<section id="dia-03" class="level2">
+<h2 class="anchored" data-anchor-id="dia-03">Dia 03</h2>
+<section id="exercício-3.1" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-3.1">Exercício 3.1</h3>
+<p><em>O que encontramos a partir dos resultados desta fPCA (análise de componentes principais funcionais)?</em></p>
+</section>
+<section id="exercício-3.2" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-3.2">Exercício 3.2</h3>
+<p><em>Quanta variabilidade dos dados foi explicada pelo primeiro fPC (componente principal funcional)?</em></p>
+</section>
+<section id="exercício-3.3" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-3.3">Exercício 3.3</h3>
+<p><em>Que característica das curvas o primeiro fPC (componente principal funcional) explica?</em></p>
+</section>
+<section id="exercício-3.4" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-3.4">Exercício 3.4</h3>
+<p><em>Tente fazer os gráficos para o segundo e terceiro fPCs (componentes principais funcionais) e seus efeitos em relação à média geral.</em></p>
+</section>
+<section id="exercício-3.5" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-3.5">Exercício 3.5</h3>
+<p><em>Discuta e interprete os resultados da fPCA (análise de componentes principais funcionais).</em></p>
+</section>
+<section id="exercício-3.6" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-3.6">Exercício 3.6</h3>
+<p><em>Quantos CPs (componentes principais) são necessários para explicar 95% das variabilidades nos dados?</em></p>
+</section>
+<section id="exercício-3.7" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-3.7">Exercício 3.7</h3>
+<p><em>What features of the underlying curves were captured by these PCs?</em></p>
+</section>
+<section id="exercício-3.8" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-3.8">Exercício 3.8</h3>
+<p><em>Explore os gráficos interativos.</em></p>
+</section>
+<section id="exercício-3.9" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-3.9">Exercício 3.9</h3>
+<p><em>Analisar os dados da Maratona (dois aspectos: tempo decorrido transformado em logaritmo e tempo por milha)</em></p>
+<ul>
+<li><p>Plote / descreva os dados.</p></li>
+<li><p>Plote / discuta as estimativas das funções média e de covariância.</p></li>
+<li><p>Use gráficos interativos para explorar os resultados da fPCA e resuma suas descobertas.</p></li>
+</ul>
+</section>
+<section id="exercício-3.10" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-3.10">Exercício 3.10</h3>
+<p><em>Analisar os dados do Poluente (foco no nível de sulfato transformado em logaritmo)</em></p>
+<p>Plote / descreva os dados.</p>
+<p>Plote / discuta as estimativas das funções média e de covariância.</p>
+<p>Use gráficos interativos para explorar os resultados da fPCA e resuma suas descobertas.</p>
+</section>
+</section>
+<section id="dia-04" class="level2">
+<h2 class="anchored" data-anchor-id="dia-04">Dia 04</h2>
+<section id="exercício-4.1" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-4.1">Exercício 4.1</h3>
+<p><em>Experimente o gráfico interativo dos resultados da fPCA (plot_shiny(fpca_res)) e interprete. (Módulo 3-3)</em></p>
+</section>
+<section id="exercício-4.2" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-4.2">Exercício 4.2</h3>
+<p><em>Voltando a questão do início…</em></p>
+<p><em>Qual é a associação entre a precipitação total anual e a curva diária de temperatura?</em></p>
+</section>
+<section id="exercício-4.3" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-4.3">Exercício 4.3</h3>
+<p><em>Explore os gr´sficos interativos</em> (colocar o link para a perguinta)</p>
+</section>
+<section id="exercício-4.4" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-4.4">Exercício 4.4</h3>
+<p><em>Qual é a associação entre os perfis de FA e as pontuações do teste PASAT em pacientes com esclerose múltipla em sua primeira visita? (regressão escalar em função)</em></p>
+</section>
+<section id="exercício-4.5" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-4.5">Exercício 4.5</h3>
+<p><em>O conjunto de dados também inclui rcst - perfis de FA coletados do trato corticoespinhal direito. Como essas medidas se relacionam com as medidas de FA ao longo da CCA?</em></p>
+</section>
+<section id="exercício-4.6" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-4.6">Exercício 4.6</h3>
+<p><em>Ajuste um modelo linear funcional com FA ao longo da CCA como resposta e pontuações do teste PASAT como covariável; tente diferentes funções R. Discuta gráficos interativos dos resultados da regressão função-em-escalar.</em></p>
+</section>
+<section id="exercício-4.7" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-4.7">Exercício 4.7</h3>
+<p><em>Usaremos o conjunto de dados de DTI para ilustrar dados funcionais observados longitudinalmente amanhã. Tente plotar vários perfis observados de um paciente com esclerose múltipla selecionado aleatoriamente (algo semelhante ao exemplo abaixo).</em> (ainda tem que criar os gráficos)</p>
+</section>
+</section>
+<section id="dia-05" class="level2">
+<h2 class="anchored" data-anchor-id="dia-05">Dia 05</h2>
+<section id="exercício-5.1" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-5.1">Exercício 5.1</h3>
+<p><em>Plote a trajetória predita de FA para um paciente com esclerose múltipla diferente / um tempo de visita diferente.</em></p>
+</section>
+<section id="exercício-5.2" class="level3">
+<h3 class="anchored" data-anchor-id="exercício-5.2">Exercício 5.2</h3>
+<p><em>Explore os gráficos interativos.</em></p>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -169,9 +751,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -236,6 +832,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

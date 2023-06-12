@@ -8,7 +8,7 @@ knitr::opts_chunk$set(fig.align = 'center', out.width="100%", fig.retina = 2)
 pacman::p_load(tidyverse, lme4, mgcv, refund, face, fda, rgl, fields, refund.shiny, janitor)
 ```
 
-# Modelagem de Dados Funcionais usando Componentes Principais Funcionais {secao-3}
+# Modelagem de Dados Funcionais usando Componentes Principais Funcionais {#secao-3}
 
 ## Tópicos de hoje:
 

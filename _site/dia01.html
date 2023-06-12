@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,9 +17,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -46,43 +47,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -132,41 +103,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Introdução à Análise de Dados Funcionais</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./dia01.html" aria-current="page">
+    <a class="nav-link active" href="./dia01.html" rel="" target="" aria-current="page">
  <span class="menu-text">Dia-01</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dia02.html">
+    <a class="nav-link" href="./dia02.html" rel="" target="">
  <span class="menu-text">Dia-02</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dia03.html">
+    <a class="nav-link" href="./dia03.html" rel="" target="">
  <span class="menu-text">Dia-03</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dia04.html">
+    <a class="nav-link" href="./dia04.html" rel="" target="">
  <span class="menu-text">Dia-04</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dia05.html">
+    <a class="nav-link" href="./dia05.html" rel="" target="">
  <span class="menu-text">Dia-05</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./respostas.html">
- <span class="menu-text">Respostas</span></a>
+    <a class="nav-link" href="./respostas.html" rel="" target="">
+ <span class="menu-text">Resposta dos exercícios propostos</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -189,7 +162,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#dados-de-imagem-de-tensor-de-difusão" id="toc-dados-de-imagem-de-tensor-de-difusão" class="nav-link" data-scroll-target="#dados-de-imagem-de-tensor-de-difusão">3.1 Dados de imagem de tensor de difusão</a></li>
   <li><a href="#dados-meteorológicos-do-canadá" id="toc-dados-meteorológicos-do-canadá" class="nav-link" data-scroll-target="#dados-meteorológicos-do-canadá">3.2 Dados meteorológicos do Canadá</a></li>
   <li><a href="#dados-cd4" id="toc-dados-cd4" class="nav-link" data-scroll-target="#dados-cd4">3.3 Dados CD4</a></li>
-  <li><a href="#dados-de-crescimento-de-berkeley" id="toc-dados-de-crescimento-de-berkeley" class="nav-link" data-scroll-target="#dados-de-crescimento-de-berkeley">3.4 Dados de crescimento de Berkeley</a></li>
+  <li><a href="#dados-da-maratona-de-boston-kaggle" id="toc-dados-da-maratona-de-boston-kaggle" class="nav-link" data-scroll-target="#dados-da-maratona-de-boston-kaggle">3.4 Dados da maratona de Boston (Kaggle)</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">3.5</a></li>
+  <li><a href="#dados-de-crescimento-de-berkeley" id="toc-dados-de-crescimento-de-berkeley" class="nav-link" data-scroll-target="#dados-de-crescimento-de-berkeley">3.6 Dados de crescimento de Berkeley</a></li>
   </ul></li>
   <li><a href="#resumo" id="toc-resumo" class="nav-link" data-scroll-target="#resumo">4 Resumo :</a></li>
   </ul></li>
@@ -216,9 +191,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<div class="cell">
-
-</div>
 <section id="tópicos-dia-1" class="level1">
 <h1>Tópicos dia 1:</h1>
 <ul>
@@ -382,9 +354,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Questões de interesse:</p>
 <ul>
-<li><p>Como as medições de AF ao longo do CCA variam entre os indivíduos com EM?</p></li>
-<li><p>Qual é a associação entre medições de AF e funções cognitivas (pontuações PASAT)?</p></li>
-<li><p>O perfil típico de AF varia entre pacientes com EM e indivíduos saudáveis?</p></li>
+<li><p><a href="./respostas.html#exercicio-1.1">Como as medições de AF ao longo do CCA variam entre os indivíduos com EM?</a></p></li>
+<li><p><a href="./respostas.html#exercicio-1.2">Qual é a associação entre medições de AF e funções cognitivas (pontuações PASAT)?</a></p></li>
+<li><p><a href="./respostas.html#exercicio-1.3">O perfil típico de AF varia entre pacientes com EM e indivíduos saudáveis?</a></p></li>
 </ul>
 </section>
 <section id="dados-meteorológicos-do-canadá" class="level3">
@@ -484,9 +456,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Questões de interesse:</p>
 <ul>
-<li><p>Descrever características que caracterizam os perfis diários de temperatura.</p></li>
-<li><p>Qual é a associação entre a precipitação média anual e a temperatura diária no Canadá?</p></li>
-<li><p>E quanto à associação entre as precipitações diárias e os perfis de temperatura.</p></li>
+<li><p><a href="./respostas.html#exercicio-1.4">Descrever características que caracterizam os perfis diários de temperatura.</a></p></li>
+<li><p><a href="./respostas.html#exercicio-1.5">Qual é a associação entre a precipitação média anual e a temperatura diária no Canadá?</a></p></li>
+<li><p><a href="./respostas.html#exercicio-1.6">E quanto à associação entre as precipitações diárias e os perfis de temperatura.</a></p></li>
 </ul>
 </section>
 <section id="dados-cd4" class="level3">
@@ -519,11 +491,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>Questões de interesse:</p>
-<p>Como as contagens de CD4 variam ao longo do tempo na população, bem como no nível individual?</p>
-<p>Descreva as principais direções nas quais as contagens de CD4 variam.</p>
+<p><a href="./respostas.html#exercicio-1.7">Como as contagens de CD4 variam ao longo do tempo na população, bem como no nível individual?</a></p>
+<p><a href="./respostas.html#exercicio-1.8">Descreva as principais direções nas quais as contagens de CD4 variam.</a></p>
+</section>
+<section id="dados-da-maratona-de-boston-kaggle" class="level3">
+<h3 class="anchored" data-anchor-id="dados-da-maratona-de-boston-kaggle">3.4 Dados da maratona de Boston (Kaggle)</h3>
+<p>Infelizmente eu não encontrei os dados utilizados no curso original, para substituir eu vou utilizar os dados sobre a <a href="https://www.kaggle.com/datasets/rojour/boston-results">maratona de Boston</a>. Que como veremos não são o ideal para o proposito do curso.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia01_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia01_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia01_files/figure-html/unnamed-chunk-9-3.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="./respostas.html#exercicio-1.9">Descreva os gráficos - como a estratégia de corrida difere entre os corredores?</a></p>
+<p>Perguntas de interesse:</p>
+<ul>
+<li><p><a href="./respostas.html#exercicio-1.10">Como a velocidade varia ao longo de uma maratona?</a></p></li>
+<li><p><a href="./respostas.html#exercicio-1.11">Qual é a relação entre o comportamento da velocidade durante a maratona e o tempo de chegada?</a></p></li>
+<li><p><a href="./respostas.html#exercicio-1.12">Qual é a melhor estratégia para terminar a maratona entre os cinco primeiros colocados?</a></p></li>
+</ul>
+</section>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section">3.5</h3>
 </section>
 <section id="dados-de-crescimento-de-berkeley" class="level3">
-<h3 class="anchored" data-anchor-id="dados-de-crescimento-de-berkeley">3.4 Dados de crescimento de Berkeley</h3>
+<h3 class="anchored" data-anchor-id="dados-de-crescimento-de-berkeley">3.6 Dados de crescimento de Berkeley</h3>
 <p>O conjunto de dados Berkeley Growth Data (também conhecido como Berkeley Growth Study) é um conjunto de dados histórico amplamente utilizado em pesquisas sobre crescimento e desenvolvimento infantil, contendo em alturas de 39 meninos e 54 meninas de 1 a 18 anos e as idades em que foram coletados. Esse conjunto de dados foi coletado como parte do Berkeley Growth Study, que ocorreu na Universidade da Califórnia, Berkeley, durante o século XX.</p>
 <p>O Berkeley Growth Data contém informações longitudinais de medidas antropométricas (como altura e peso) de um grande número de crianças desde o nascimento até a idade adulta. As medidas foram coletadas em intervalos regulares ao longo de vários anos, permitindo uma análise detalhada do crescimento e desenvolvimento ao longo do tempo.</p>
 <div class="cell" data-layout-align="center">
@@ -565,7 +574,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="dia01_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="dia01_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -580,7 +589,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="dia01_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="dia01_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -627,9 +636,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -694,6 +717,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

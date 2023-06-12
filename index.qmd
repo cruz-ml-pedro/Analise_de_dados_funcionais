@@ -30,12 +30,12 @@ Vamos começar explorando os fundamentos da análise de dados funcionais com R e
 
 ### [Módulo 1: Introdução aos Dados Funcionais](dia01.qmd#secao-1)
 
--   Módulo 1-1: R e RStudio
+-   Módulo 1-1: R e RStudio (não coloquei essa parte)
 -   Módulo 1-2: Introdução a conjuntos de dados
 -   Módulo 1-3: Introdução a conjuntos de dados (continuação)
 -   Módulo 1-4: Resumo e Discussão
 
-### [Módulo 2: Modelagem de Dados Funcionais com Expansões de Base Pré-definidas](dia02.qmd#secao-2) 
+### [Módulo 2: Modelagem de Dados Funcionais com Expansões de Base Pré-definidas](dia02.qmd#secao-2)
 
 -   Módulo 2-1: Funções de base
 -   Módulo 2-2: Regressão linear em funções de base
@@ -43,21 +43,23 @@ Vamos começar explorando os fundamentos da análise de dados funcionais com R e
 -   Módulo 2-4: Suavização com penalidade de rugosidade
 -   Módulo 2-5: Resumo e Discussão
 
-### [Módulo 3: Modelagem de Dados Funcionais usando Componentes Principais Funcionais](dia03.qmd#secao-3) 
+### [Módulo 3: Modelagem de Dados Funcionais usando Componentes Principais Funcionais](dia03.qmd#secao-3)
 
 -   Módulo 3-1: Análise de Componentes Principais Funcionais para dados altamente - frequentes
 -   Módulo 3-2: Análise de Componentes Principais Funcionais para dados funcionais esparsos
 -   Módulo 3-3: Gráficos interativos para Análise de Componentes Principais Funcionais
 -   Módulo 3-4: Resumo e Discussão
 
-### [Módulo 4: Modelos Lineares Funcionais](dia04.qmd#secao-4) 
+### [Módulo 4: Modelos Lineares Funcionais](dia04.qmd#secao-4)
 
 -   Módulo 4-1: Regressão escalar em função
 -   Módulo 4-2: Regressão de função em escalar (visualização)
 -   Módulo 4-3: Regressão de função em função
 -   Módulo 4-4: Resumo, Discussão e Atividades em Grupo
 
-### [Módulo 5: Dados Funcionais Correlacionados](dia05.qmd#secao-5) 
+### [Módulo 5: Dados Funcionais Correlacionados](dia05.qmd#secao-5)
 
 -   Módulo 5-1: Análise de Dados Funcionais Longitudinais e Gráficos interativos
 -   Módulo 5-2: Discussão
+
+### [Resposta dos exercícios propostos](respostas.qmd#secao-6)

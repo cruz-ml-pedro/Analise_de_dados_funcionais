@@ -10,7 +10,7 @@ pacman::p_load(tidyverse, lme4, mgcv, refund, face, fda, rgl, fields, refund.shi
 
 ```
 
-# Análise longitudinal de dados funcionais {secao-5}
+# Análise longitudinal de dados funcionais {#secao-5}
 
 Visualização usando o pacote refund.shiny
 
