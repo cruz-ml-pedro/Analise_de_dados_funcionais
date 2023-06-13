@@ -90,7 +90,8 @@ mutate_seconds <- function(x){
  
  
 marathon_df %>% 
-  dplyr::slice(1:105) %>% 
+  dplyr::filter(m_f == "M") %>%
+  dplyr::slice(1:150) %>% 
   pivot_longer(cols = 15:24) %>% 
   mutate(
     name = as.numeric(name)
@@ -128,15 +129,18 @@ O primeiro passo da estimativa é executar o fPCA na covariável funcional usand
 
 ```{r}
 speed <- marathon_df %>% 
-dplyr::select(15:24) %>% 
-dplyr::slice(1:150) %>% 
-  as.matrix()
+    dplyr::filter(m_f == "M") %>% 
+    dplyr::select(15:24) %>% 
+    dplyr::slice(1:150) %>% 
+      as.matrix()
 
 kms <- c(5,10,15,20,21,25,30,35,40,42)
 
-final_time <- marathon_df$official_time %>% 
-  as_tibble() %>% 
+final_time <-
+  marathon_df %>% 
+  dplyr::filter(m_f == "M") %>%
   dplyr::slice(1:150) %>% 
+  dplyr::select(official_time) %>%  
   as.matrix()
 
 fpca_res <- fpca.face(Y= speed ,pve = 0.97, argvals = kms, knots = 6)

@@ -157,6 +157,7 @@ print(freq_relativa)
 
 ```
 
+
 ```{r}
 freq_relativa %>% 
   ggplot(aes(x = sex, y = freq_rel, fill = as.factor(case))) +
@@ -357,27 +358,127 @@ Os dados apresentam comportamento muito diferentes entre os indivíduos.
 
 *Descreva os gráficos - como a estratégia de corrida difere entre os corredores?*
 
-criar os gráficos e colocar um link para eles
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+marathon_results_2017 <-readr::read_csv("marathon_results_2017.csv")
 
-### Exercício 1.10
+marathon_df <- marathon_results_2017 %>% 
+dplyr::select(-c(`...1`,
+            Bib,City,
+            State,
+            Country,
+            Citizen,
+            `...10`,
+            Division,
+            Gender,
+            Overall,
+            `Proj Time`)) %>% 
+  janitor::clean_names()
+
+mutate_seconds <- function(x){
+  lubridate::hour(x)* 3600 + lubridate::minute(x) * 60 + lubridate::second(x) *1
+}
+  
+
+ marathon_df <- 
+   marathon_df %>% 
+        drop_na() %>% 
+        mutate(
+          across(starts_with(c("x","half")), lubridate::hms),
+          across(starts_with(c("x","half","pace", "official_time")), mutate_seconds),
+          `5` = (5000/ `x5k`)*3.6,
+          `10` = (10000/ `x10k`)*3.6,
+          `15` = (15000/ `x15k`)*3.6,
+          `20` = (20000/ `x20k`)*3.6,
+          `21` = (21000/ half)*3.6,
+          `25` = (25000/ `x25k`)*3.6,
+          `30` = (30000/ `x30k`)*3.6,
+          `35` = (35000/ `x35k`)*3.6,
+          `40` = (40000/ `x40k`)*3.6,
+          `42` = (42000/ official_time)*3.6
+            ) %>% 
+   rename(
+     names = name
+   )
+ 
+ 
+marathon_df %>% 
+  dplyr::slice(1:150) %>% 
+  pivot_longer(cols = contains(c("x"))) %>% 
+  mutate(
+    name = gsub("[xkXK]", "", name),
+    name = as.numeric(name)
+  ) %>% 
+  group_by(name) %>% 
+  ggplot(aes(name,value, group = names, color = m_f))+
+  geom_line(alpha = 0.7, color = "grey")+
+  #geom_point(color = "black", alpha = 0.7)+
+  ylab("Tempo (seg)")+
+  xlab("Km de maratona")+
+  ggtitle("Maratona - Tempo")
+ 
+
+marathon_df %>% 
+  dplyr::slice(1:150) %>% 
+  pivot_longer(cols = contains(c("x"))) %>% 
+  mutate(
+    name = gsub("[xkXK]", "", name),
+    name = as.numeric(name),
+    log_time = log(value)
+  ) %>% 
+  group_by(name) %>% 
+  ggplot(aes(name,log_time, group = names, color = m_f))+
+  geom_line(alpha = 0.7, color = "grey")+
+  #geom_point(color = "black", alpha = 0.7)+
+  ylab("Tempo (seg)")+
+  xlab("Km de maratona")+
+  ggtitle("Maratona - Tempo")
+
+```
+
+Para mim, é bastante difícil observar qualquer estratégia dos participantes com base nesses dois gráficos. Parece que a única diferença que podemos notar é a variação na performance individual de cada atleta.
+
+### Exercício 1.10 {#exercicio-1.10}
 
 *Como a velocidade varia ao longo de um percurso de uma maratona?*
 
-### Exercício 1.11
+```{r, echo=FALSE}
+marathon_df %>% 
+  dplyr::filter(m_f == "M") %>% 
+  dplyr::slice(1:150) %>% 
+  pivot_longer(cols = 15:24) %>% 
+  mutate(
+    name = as.numeric(name)
+  ) %>% 
+  group_by(name) %>% 
+  ggplot(aes(name,value, group = names, color = m_f))+
+  geom_line(alpha = 0.7, color = "grey")+
+  #geom_point(color = "black", alpha = 0.7)+
+  ylab("Velocidade Km/h")+
+  xlab("Km de maratona")+
+  ggtitle("Maratona - Velocidade")
+```
+
+Existem diversos comportamentos que podem ser observados em relação a velocidade. Em geral a velocidade parece diminuir ao longo da prova para a grande maioria dos participantes. 
+
+### Exercício 1.11 {#exercicio-1.11}
 
 *Qual é a relação entre o comportamento da velocidade durante a maratona e o tempo de chegada?*
 
-### Exercício 1.12
+Essa questão será respondida mais para frente, quando estudarmos modelos lineares funcionais.
+
+### Exercício 1.12 {#exercicio-1.12}
 
 *Qual é a melhor estratégia para terminar a maratona entre os cinco primeiros colocados?*
 
+Assim como a quastão anterior, esse tema pode ser melhor discutido após aprendermos fPCA e modelos lineares funcionais.
+
 ### Exercício 1.13
 
-*Descreva a variação do poluente em todo os Estados Unidos.* (ainda não tem um dados para substituir)
+*Descreva a variação do poluente.*
 
 ### Exercício 1.14
 
-*Descreva os principais modos de variação.* (ainda não tem um dados para substituir)
+*Descreva os principais modos de variação.*
 
 ### Exercício 1.15
 

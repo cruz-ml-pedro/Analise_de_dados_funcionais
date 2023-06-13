@@ -329,6 +329,7 @@ mutate_seconds <- function(x){
  
  
 marathon_df %>% 
+  dplyr::filter(m_f == "M") %>% 
   dplyr::slice(1:150) %>% 
   pivot_longer(cols = contains(c("x"))) %>% 
   mutate(
@@ -345,6 +346,7 @@ marathon_df %>%
  
 
 marathon_df %>% 
+  dplyr::filter(m_f == "M") %>%
   dplyr::slice(1:150) %>% 
   pivot_longer(cols = contains(c("x"))) %>% 
   mutate(
@@ -362,6 +364,7 @@ marathon_df %>%
  
  
 marathon_df %>% 
+  dplyr::filter(m_f == "M") %>%
   dplyr::slice(1:150) %>% 
   pivot_longer(cols = 15:24) %>% 
   mutate(
@@ -386,7 +389,37 @@ Perguntas de interesse:
 
  - [Qual é a melhor estratégia para terminar a maratona entre os cinco primeiros colocados?](respostas.qmd#exercicio-1.12)
 
-### 3.5 Dados de Poluentes PM2.5 (Brasil).
+### 3.5 Dados de Poluentes PM2.5.
+
+O parâmetro PM2.5 se refere a partículas finas em suspensão no ar, com diâmetro igual ou inferior a 2,5 micrômetros (µm). Essas partículas são consideradas pequenas e podem ser inaladas facilmente, penetrando profundamente nos pulmões e até mesmo na corrente sanguínea.
+
+O PM2.5 é uma medida comumente utilizada para avaliar a qualidade do ar e os riscos associados à poluição atmosférica. Essas partículas podem ser geradas por diversas fontes, incluindo a queima de combustíveis fósseis, a poluição industrial, a queima de biomassa, os veículos automotores e as atividades agrícolas.
+
+A exposição prolongada ao PM2.5 tem sido associada a uma série de efeitos adversos à saúde, incluindo problemas respiratórios, doenças cardiovasculares, efeitos neurológicos, além de aumentar o risco de câncer de pulmão. Além disso, o PM2.5 pode contribuir para a formação de nevoeiros e reduzir a visibilidade.
+
+Para monitorar a concentração de PM2.5, são utilizadas estações de monitoramento que coletam amostras de ar e medem a quantidade de partículas presentes. Os dados coletados são geralmente expressos em microgramas por metro cúbico (µg/m³) e são usados para avaliar a qualidade do ar, implementar medidas de controle da poluição e informar o público sobre os níveis de poluição atmosférica.
+
+Em resumo, o parâmetro PM2.5 é uma medida importante para avaliar a poluição atmosférica e os riscos à saúde associados a partículas finas presentes no ar. Sua monitorização contínua é essencial para proteger a saúde pública e tomar medidas efetivas para reduzir a exposição a essas partículas poluentes.
+
+
+Assim como no caso dos dados da maratona, eu não consegui encontrar os dados usados originalmente no curso. Para substituilos vamos usar os dados disponibilizados na plataforma Keggle referentes as diferentes cidades da china. [link para os dados](https://www.kaggle.com/datasets/uciml/pm25-data-for-five-chinese-cities)
+
+As informações desse conjunto de dados diferem dos dados usados originalemente! Logo voltaremos a esse conjunto de dados e vamos tentar descobrir quais questões podem ser respondidas ao analisa-lo.
+
+A principio vamos utilizar os dados da cidade de Beijing, onde temos dados registrados em 4 diferentes localidade, de hora em hora, durante todo o ano de 2015.
+
+```{r, warning=FALSE,message=FALSE}
+pm2.5_beijing <-  read_csv("pm2.5_dados/BeijingPM20100101_20151231.csv")
+
+pm2.5_beijing %>% 
+  dplyr::filter(year==2015) %>% 
+  mutate(
+    data_hora = as.POSIXct(paste(year, month, day, hour, sep = "-"), format = "%Y-%m-%d-%H")
+  ) %>% 
+  pivot_longer(cols = contains("PM")) %>% 
+  ggplot(aes(data_hora,value,group=name,color=name))+
+  geom_line()
+```
 
 
 ### 3.6 Dados de crescimento de Berkeley

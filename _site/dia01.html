@@ -163,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#dados-meteorológicos-do-canadá" id="toc-dados-meteorológicos-do-canadá" class="nav-link" data-scroll-target="#dados-meteorológicos-do-canadá">3.2 Dados meteorológicos do Canadá</a></li>
   <li><a href="#dados-cd4" id="toc-dados-cd4" class="nav-link" data-scroll-target="#dados-cd4">3.3 Dados CD4</a></li>
   <li><a href="#dados-da-maratona-de-boston-kaggle" id="toc-dados-da-maratona-de-boston-kaggle" class="nav-link" data-scroll-target="#dados-da-maratona-de-boston-kaggle">3.4 Dados da maratona de Boston (Kaggle)</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">3.5</a></li>
+  <li><a href="#dados-de-poluentes-pm2.5." id="toc-dados-de-poluentes-pm2.5." class="nav-link" data-scroll-target="#dados-de-poluentes-pm2.5.">3.5 Dados de Poluentes PM2.5.</a></li>
   <li><a href="#dados-de-crescimento-de-berkeley" id="toc-dados-de-crescimento-de-berkeley" class="nav-link" data-scroll-target="#dados-de-crescimento-de-berkeley">3.6 Dados de crescimento de Berkeley</a></li>
   </ul></li>
   <li><a href="#resumo" id="toc-resumo" class="nav-link" data-scroll-target="#resumo">4 Resumo :</a></li>
@@ -528,49 +528,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><a href="./respostas.html#exercicio-1.12">Qual é a melhor estratégia para terminar a maratona entre os cinco primeiros colocados?</a></p></li>
 </ul>
 </section>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">3.5</h3>
-</section>
-<section id="dados-de-crescimento-de-berkeley" class="level3">
-<h3 class="anchored" data-anchor-id="dados-de-crescimento-de-berkeley">3.6 Dados de crescimento de Berkeley</h3>
-<p>O conjunto de dados Berkeley Growth Data (também conhecido como Berkeley Growth Study) é um conjunto de dados histórico amplamente utilizado em pesquisas sobre crescimento e desenvolvimento infantil, contendo em alturas de 39 meninos e 54 meninas de 1 a 18 anos e as idades em que foram coletados. Esse conjunto de dados foi coletado como parte do Berkeley Growth Study, que ocorreu na Universidade da Califórnia, Berkeley, durante o século XX.</p>
-<p>O Berkeley Growth Data contém informações longitudinais de medidas antropométricas (como altura e peso) de um grande número de crianças desde o nascimento até a idade adulta. As medidas foram coletadas em intervalos regulares ao longo de vários anos, permitindo uma análise detalhada do crescimento e desenvolvimento ao longo do tempo.</p>
+<section id="dados-de-poluentes-pm2.5." class="level3">
+<h3 class="anchored" data-anchor-id="dados-de-poluentes-pm2.5.">3.5 Dados de Poluentes PM2.5.</h3>
+<p>O parâmetro PM2.5 se refere a partículas finas em suspensão no ar, com diâmetro igual ou inferior a 2,5 micrômetros (µm). Essas partículas são consideradas pequenas e podem ser inaladas facilmente, penetrando profundamente nos pulmões e até mesmo na corrente sanguínea.</p>
+<p>O PM2.5 é uma medida comumente utilizada para avaliar a qualidade do ar e os riscos associados à poluição atmosférica. Essas partículas podem ser geradas por diversas fontes, incluindo a queima de combustíveis fósseis, a poluição industrial, a queima de biomassa, os veículos automotores e as atividades agrícolas.</p>
+<p>A exposição prolongada ao PM2.5 tem sido associada a uma série de efeitos adversos à saúde, incluindo problemas respiratórios, doenças cardiovasculares, efeitos neurológicos, além de aumentar o risco de câncer de pulmão. Além disso, o PM2.5 pode contribuir para a formação de nevoeiros e reduzir a visibilidade.</p>
+<p>Para monitorar a concentração de PM2.5, são utilizadas estações de monitoramento que coletam amostras de ar e medem a quantidade de partículas presentes. Os dados coletados são geralmente expressos em microgramas por metro cúbico (µg/m³) e são usados para avaliar a qualidade do ar, implementar medidas de controle da poluição e informar o público sobre os níveis de poluição atmosférica.</p>
+<p>Em resumo, o parâmetro PM2.5 é uma medida importante para avaliar a poluição atmosférica e os riscos à saúde associados a partículas finas presentes no ar. Sua monitorização contínua é essencial para proteger a saúde pública e tomar medidas efetivas para reduzir a exposição a essas partículas poluentes.</p>
+<p>Assim como no caso dos dados da maratona, eu não consegui encontrar os dados usados originalmente no curso. Para substituilos vamos usar os dados disponibilizados na plataforma Keggle referentes as diferentes cidades da china. <a href="https://www.kaggle.com/datasets/uciml/pm25-data-for-five-chinese-cities">link para os dados</a></p>
+<p>As informações desse conjunto de dados diferem dos dados usados originalemente! Logo voltaremos a esse conjunto de dados e vamos tentar descobrir quais questões podem ser respondidas ao analisa-lo.</p>
+<p>A principio vamos utilizar os dados da cidade de Beijing, onde temos dados registrados em 4 diferentes localidade, de hora em hora, durante todo o ano de 2015.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"growth"</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(growth)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Separando os dados referentes aos meninos</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>growth_boy <span class="ot">&lt;-</span> growth<span class="sc">$</span>hgtm <span class="sc">%&gt;%</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">age =</span> growth<span class="sc">$</span>age</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>     )</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Separando os dados referentes as meninas</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>growth_girl <span class="ot">&lt;-</span> growth<span class="sc">$</span>hgtf <span class="sc">%&gt;%</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">age =</span> growth<span class="sc">$</span>age</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="co"># unificando os dois conuntos e criando uma variável gênero</span></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>growth_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(</span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  growth_boy,</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  growth_girl,</span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="st">"age"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">contains</span>(<span class="fu">c</span>(<span class="st">"boy"</span>,<span class="st">"girl"</span>)),</span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"kids"</span>,</span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"height"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(</span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">gender =</span> <span class="fu">if_else</span>(stringr<span class="sc">::</span><span class="fu">str_starts</span>(kids, <span class="st">"boy"</span>), <span class="st">"M"</span>, <span class="st">"F"</span>)</span>
-<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a><span class="co"># curva de crescimento </span></span>
-<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>growth_df <span class="sc">%&gt;%</span>  </span>
-<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>   <span class="fu">group_by</span>(age) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(age, height, <span class="at">group =</span> kids, <span class="at">color =</span> gender))<span class="sc">+</span></span>
-<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>pm2<span class="fl">.5</span>_beijing <span class="ot">&lt;-</span>  <span class="fu">read_csv</span>(<span class="st">"pm2.5_dados/BeijingPM20100101_20151231.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 52584 Columns: 18
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (1): cbwd
+dbl (17): No, year, month, day, hour, season, PM_Dongsi, PM_Dongsihuan, PM_N...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>pm2<span class="fl">.5</span>_beijing <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(year<span class="sc">==</span><span class="dv">2015</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">data_hora =</span> <span class="fu">as.POSIXct</span>(<span class="fu">paste</span>(year, month, day, hour, <span class="at">sep =</span> <span class="st">"-"</span>), <span class="at">format =</span> <span class="st">"%Y-%m-%d-%H"</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">contains</span>(<span class="st">"PM"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(data_hora,value,<span class="at">group=</span>name,<span class="at">color=</span>name))<span class="sc">+</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 7 rows containing missing values (`geom_line()`).</code></pre>
+</div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -578,18 +568,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># taxa de crescimento </span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>growth_df <span class="sc">%&gt;%</span>  </span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(kids, gender) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">g_rate =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fu">diff</span>(height))</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(age, g_rate, <span class="at">group =</span> kids,<span class="at">color =</span> gender))<span class="sc">+</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="dados-de-crescimento-de-berkeley" class="level3">
+<h3 class="anchored" data-anchor-id="dados-de-crescimento-de-berkeley">3.6 Dados de crescimento de Berkeley</h3>
+<p>O conjunto de dados Berkeley Growth Data (também conhecido como Berkeley Growth Study) é um conjunto de dados histórico amplamente utilizado em pesquisas sobre crescimento e desenvolvimento infantil, contendo em alturas de 39 meninos e 54 meninas de 1 a 18 anos e as idades em que foram coletados. Esse conjunto de dados foi coletado como parte do Berkeley Growth Study, que ocorreu na Universidade da Califórnia, Berkeley, durante o século XX.</p>
+<p>O Berkeley Growth Data contém informações longitudinais de medidas antropométricas (como altura e peso) de um grande número de crianças desde o nascimento até a idade adulta. As medidas foram coletadas em intervalos regulares ao longo de vários anos, permitindo uma análise detalhada do crescimento e desenvolvimento ao longo do tempo.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"growth"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(growth)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Separando os dados referentes aos meninos</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>growth_boy <span class="ot">&lt;-</span> growth<span class="sc">$</span>hgtm <span class="sc">%&gt;%</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">age =</span> growth<span class="sc">$</span>age</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Separando os dados referentes as meninas</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>growth_girl <span class="ot">&lt;-</span> growth<span class="sc">$</span>hgtf <span class="sc">%&gt;%</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">age =</span> growth<span class="sc">$</span>age</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="co"># unificando os dois conuntos e criando uma variável gênero</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>growth_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>  growth_boy,</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>  growth_girl,</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="st">"age"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">contains</span>(<span class="fu">c</span>(<span class="st">"boy"</span>,<span class="st">"girl"</span>)),</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"kids"</span>,</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"height"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>   <span class="fu">mutate</span>(</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">gender =</span> <span class="fu">if_else</span>(stringr<span class="sc">::</span><span class="fu">str_starts</span>(kids, <span class="st">"boy"</span>), <span class="st">"M"</span>, <span class="st">"F"</span>)</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a><span class="co"># curva de crescimento </span></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>growth_df <span class="sc">%&gt;%</span>  </span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>   <span class="fu">group_by</span>(age) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(age, height, <span class="at">group =</span> kids, <span class="at">color =</span> gender))<span class="sc">+</span></span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="dia01_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="dia01_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># taxa de crescimento </span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>growth_df <span class="sc">%&gt;%</span>  </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(kids, gender) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">g_rate =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="fu">diff</span>(height))</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(age, g_rate, <span class="at">group =</span> kids,<span class="at">color =</span> gender))<span class="sc">+</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dia01_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
