@@ -282,7 +282,7 @@ Questões de interesse:
 
 ### 3.4 Dados da maratona de Boston (Kaggle)
 
-Infelizmente eu não encontrei os dados utilizados no curso original, para substituir eu vou utilizar os dados sobre a [maratona de Boston](https://www.kaggle.com/datasets/rojour/boston-results). Que como veremos não são o ideal para o proposito do curso. 
+Infelizmente eu não encontrei os dados utilizados no curso original, para substituir eu vou utilizar os dados sobre a [maratona de Boston](https://www.kaggle.com/datasets/rojour/boston-results). Que como veremos não são o ideal para o proposito do curso.
 
 ```{r, warning=FALSE, message=FALSE, echo=FALSE}
 
@@ -383,11 +383,11 @@ marathon_df %>%
 
 Perguntas de interesse:
 
- - [Como a velocidade varia ao longo de uma maratona?](respostas.qmd#exercicio-1.10)
+-   [Como a velocidade varia ao longo de uma maratona?](respostas.qmd#exercicio-1.10)
 
- - [Qual é a relação entre o comportamento da velocidade durante a maratona e o tempo de chegada?](respostas.qmd#exercicio-1.11)
+-   [Qual é a relação entre o comportamento da velocidade durante a maratona e o tempo de chegada?](respostas.qmd#exercicio-1.11)
 
- - [Qual é a melhor estratégia para terminar a maratona entre os cinco primeiros colocados?](respostas.qmd#exercicio-1.12)
+-   [Qual é a melhor estratégia para terminar a maratona entre os cinco primeiros colocados?](respostas.qmd#exercicio-1.12)
 
 ### 3.5 Dados de Poluentes PM2.5.
 
@@ -401,7 +401,6 @@ Para monitorar a concentração de PM2.5, são utilizadas estações de monitora
 
 Em resumo, o parâmetro PM2.5 é uma medida importante para avaliar a poluição atmosférica e os riscos à saúde associados a partículas finas presentes no ar. Sua monitorização contínua é essencial para proteger a saúde pública e tomar medidas efetivas para reduzir a exposição a essas partículas poluentes.
 
-
 Assim como no caso dos dados da maratona, eu não consegui encontrar os dados usados originalmente no curso. Para substituilos vamos usar os dados disponibilizados na plataforma Keggle referentes as diferentes cidades da china. [link para os dados](https://www.kaggle.com/datasets/uciml/pm25-data-for-five-chinese-cities)
 
 As informações desse conjunto de dados diferem dos dados usados originalemente! Logo voltaremos a esse conjunto de dados e vamos tentar descobrir quais questões podem ser respondidas ao analisa-lo.
@@ -409,7 +408,7 @@ As informações desse conjunto de dados diferem dos dados usados originalemente
 A principio vamos utilizar os dados da cidade de Beijing, onde temos dados registrados em 4 diferentes localidade, de hora em hora, durante todo o ano de 2015.
 
 ```{r, warning=FALSE,message=FALSE}
-pm2.5_beijing <-  read_csv("pm2.5_dados/BeijingPM20100101_20151231.csv")
+pm2.5_beijing <- readr::read_csv("pm2.5_dados/BeijingPM20100101_20151231.csv")
 
 pm2.5_beijing %>% 
   dplyr::filter(year==2015) %>% 
@@ -421,6 +420,11 @@ pm2.5_beijing %>%
   geom_line()
 ```
 
+Perguntas de interesse:
+
+[Descreva a variação do poluente em todo os EUA.](respostas.qmd#exercicio-1.13)
+
+[Descreva os principais modos de variação.](respostas.qmd#exercicio-1.14)
 
 ### 3.6 Dados de crescimento de Berkeley
 
@@ -477,9 +481,17 @@ growth_df %>%
 
 Questões de interesse:
 
-Como a altura varia em meninos e meninas?
+[Como a altura varia em meninos e meninas?](respostas.qmd#exercicio-1.15)
 
-O género tem impacto no processo de crescimento de uma criança?
+[O género tem impacto no processo de crescimento de uma criança?](respostas.qmd#exercicio-1.16)
+
+[Plote a taxa de crescimento de meninos e meninas e descreva-a.](respostas.qmd#exercicio-1.17)
+
+[Explore os dados das curvas de crescimento de Berkeley](respostas.qmd#exercicio-1.18)
+
+-   Plote/descreva a função média.
+-   Plote/descreva a função de covariância.
+-   As funções média e de covariância diferem entre mulheres e homens?
 
 ## 4 Resumo :
 

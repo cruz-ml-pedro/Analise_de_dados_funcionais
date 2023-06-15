@@ -472,27 +472,104 @@ Essa questão será respondida mais para frente, quando estudarmos modelos linea
 
 Assim como a quastão anterior, esse tema pode ser melhor discutido após aprendermos fPCA e modelos lineares funcionais.
 
-### Exercício 1.13
+### Exercício 1.13 {#exercicio-1.13}
 
 *Descreva a variação do poluente.*
 
-### Exercício 1.14
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+pm2.5_beijing <- readr::read_csv("pm2.5_dados/BeijingPM20100101_20151231.csv")
+
+pm2.5_beijing %>% 
+  dplyr::filter(year==2015) %>% 
+  mutate(
+    data_hora = as.POSIXct(paste(year, month, day, hour, sep = "-"), format = "%Y-%m-%d-%H")
+  ) %>% 
+  pivot_longer(cols = contains("PM")) %>% 
+  ggplot(aes(data_hora,value,group=name,color=name))+
+  geom_line()
+```
+
+O comportamento das curvas de PM2.5 é muito semelhante para todas as estações, variando apenas nos valores resgistrados. Outro aspecto interessante é a diminuição nos valores de PM2.5 durantes os meses de maio a outubro, possivelmente relacionados a períodos de chuva.
+
+
+
+### Exercício 1.14 {#exercicio-1.14}
 
 *Descreva os principais modos de variação.*
 
-### Exercício 1.15
+Vamos voltar nessa questão mais para frente, após explorarmos melhor esses dados.
+
+### Exercício 1.15 {#exercicio-1.15}
 
 *Como a altura varia em meninos e meninas?*
 
-### Exercício 1.16
+```{r, echo=FALSE}
+data("growth")
+
+# Separando os dados referentes aos meninos
+growth_boy <- growth$hgtm %>%
+  as_tibble() %>% 
+   mutate(
+     age = growth$age
+     )
+# Separando os dados referentes as meninas
+growth_girl <- growth$hgtf %>%
+  as_tibble() %>% 
+  mutate(
+    age = growth$age
+  )
+
+# unificando os dois conuntos e criando uma variável gênero
+growth_df <- left_join(
+  growth_boy,
+  growth_girl,
+  by = "age") %>% 
+  pivot_longer(
+    cols = contains(c("boy","girl")),
+    names_to = "kids",
+    values_to = "height") %>% 
+   mutate(
+    gender = if_else(stringr::str_starts(kids, "boy"), "M", "F")
+  )
+
+
+# curva de crescimento 
+growth_df %>%  
+   group_by(age) %>% 
+  ggplot(aes(age, height, group = kids, color = gender))+
+  geom_line()
+
+
+```
+
+Analisando apenas o gráfico, parece haver uma diferença nas alturas entre meninos e meninas apenas na parte final da curva, onde as medições dos meninos, em geral, são maiores do que as das meninas.
+
+Embora ainda não tenhamos explorado métodos de análise de dados funcionais, vamos utilizar ferramentas estatísticas para investigar mais a fundo essa aparente diferença entre as alturas de meninos e meninas.
+
+### Exercício 1.16 {#exercicio-1.16}
 
 *O gênero tem impacto no processo de crescimento de uma criança?*
 
-### Exercício 1.17
+Ao analisarmos apenas o gráfico acima, não temos nenhum indício que nos faça acreditar que exista uma diferença no processo de crescimento, exceto na altura final, onde os meninos são, em geral, mais altos que as meninas. No entanto, ao observarmos o gráfico abaixo, fica evidente que existe uma diferença na taxa de crescimento entre os gêneros a partir dos ~11 anos, momento em que as meninas começam a crescer mais rapidamente que os meninos, e essa taxa de crescimento diminui praticamente para zero por volta dos ~15 anos. Por outro lado, os meninos têm sua maior taxa de crescimento por volta dos ~13 anos e continuam com uma taxa mais alta até os 18 anos, quando os dados cessam.
+
+### Exercício 1.17 {#exercicio-1.17}
 
 *Plote a taxa de crescimento de meninos e meninas e descreva-a.*
 
-### Exercício 1.18
+```{r, echo=FALSE}
+# taxa de crescimento 
+growth_df %>%  
+  group_by(kids, gender) %>% 
+  mutate(
+    g_rate = c(0,diff(height))
+  ) %>%
+  ggplot(aes(age, g_rate, group = kids,color = gender))+
+  geom_line()
+```
+
+Essas questões são do curso original... eu já descrevi o gráfico na questão acima.
+
+### Exercício 1.18 {#exercicio-1.18}
 
 *Explore os dados das curvas de crescimento de Berkeley*
 
@@ -500,9 +577,6 @@ Assim como a quastão anterior, esse tema pode ser melhor discutido após aprend
 -   Plote/descreva a função de covariância.
 -   As funções média e de covariância diferem entre mulheres e homens?
 
-### Exercício 1.19
-
-*Reproduza os gráficos para os conjuntos de dados discutidos na terceira página.* (Maratona,poluição,crescimento)
 
 ## Dia 02
 

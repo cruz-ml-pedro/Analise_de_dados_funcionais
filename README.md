@@ -1,6 +1,16 @@
-# Minicurso de Análise de Dados Funcionais
+# Análise de Dados Funcionais
 
-## (Em construção)
+## (Em construção - espaço para estudo sobre o tema)
+
+## [link para o material](https://analise-dados-funcionais.netlify.app/)
+
+Esta é a minha versão do minicurso de análise de dados funcionais oferecido pelo Departamento de Estatística da Universidade da Carolina do Norte.
+
+No contexto do curso, substituí os conjuntos de dados originais sobre os participantes da seleção para a equipe olímpica de maratona e os níveis de poluentes atmosféricos em diferentes localidades dos EUA, já que não os encontrei. Em vez disso, utilizei dados disponibilizados na plataforma Kaggle. Além disso, diferentemente do curso original, sempre que possível, explorei as funcionalidades do pacote tidyverse. Também criei uma aba para compartilhar minhas respostas aos problemas propostos durante o curso.
+
+[Maratona Boston](https://www.kaggle.com/datasets/rojour/boston-results)
+[PM2.5-China](https://www.kaggle.com/datasets/uciml/pm25-data-for-five-chinese-cities)
+
 
 Bem-vindo ao Minicurso de Análise de Dados Funcionais!
 

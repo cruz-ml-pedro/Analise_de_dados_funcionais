@@ -9,6 +9,8 @@ knitr::opts_chunk$set(fig.align = 'center', out.width="100%", fig.retina = 2)
 ```{r, echo=FALSE}
 knitr::include_graphics(here::here("animacao.gif"))
 ```
+Quer ver como essa página foi contruida? [Link para o github da página](https://github.com/cruz-ml-pedro/Analise_de_dados_funcionais)
+
 
 Bem-vindo ao mini curso de Análise de Dados Funcionais com R! Neste curso, vamos explorar uma abordagem poderosa para lidar com conjuntos de dados complexos e dinâmicos, conhecidos como dados funcionais.
 
